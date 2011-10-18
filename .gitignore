@@ -1,0 +1,7 @@
+# Ignore settings files that could have database passwords.
+drupal/sites/*/settings.*.php
+drupal/sites/*/*.settings.php
+
+# Ignore files directories.
+drupal/sites/*/files
+drupal/sites/*/private
