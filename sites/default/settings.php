@@ -457,10 +457,5 @@ else {
   ) {
     include_once 'sites/default/' . $matches[1] . '.settings.php';
   }
-  elseif (file_exists('sites/default/' . getenv(USER) . '.settings.php')) {
-    // If called from drush. It's better practice to use the -l flag, but
-    // try to play nice in case a developer forgets it.
-    include_once 'sites/default/' . getenv(USER) . '.settings.php';
-  }
 }
 
