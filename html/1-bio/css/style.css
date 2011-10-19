@@ -1,0 +1,93 @@
+/* ==|== primary styles =====================================================
+   Author: ☺
+   ========================================================================== */
+
+html, body {padding: 0; }
+
+div#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  background: #333;
+  color: #ccc;
+}
+header h1 {
+  padding: 1em 0 0 1em; 
+}
+header nav {}
+header nav ul {}
+header nav ul li {
+  display: inline-block;
+  padding: 1em;
+}
+header nav ul li a {
+  diaply: block;
+  color: #abf;
+}
+
+div#main {
+  clear: both;
+  padding: 0 1em;
+}
+
+div.bio-info {
+  width: 300px;
+  float: right;
+  background: #ddd;
+  padding: 1em;
+  margin-left: 2em;
+}
+div.bio-info img.photo {
+  width: 300px;
+}
+div.bio-info dl {}
+div.bio-info dl dt {
+  float: left;
+  clear: left;
+  width: 50px;
+  text-align: right;
+  margin-right: 1em;
+  font-weight: 700;
+}
+div.bio-info dl dd {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  display: block;
+  padding: 1em;
+  background: #333;
+  color: #ccc;
+}
+
+footer p#copyright {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==|== media queries ====================================================== */
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 960px) {
+
+}
