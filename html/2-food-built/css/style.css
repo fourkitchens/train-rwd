@@ -150,14 +150,6 @@ footer p#copyright {
 
 @media only screen and (min-width: 640px) {
 
-  header {}
-  header h1 {}
-  header nav {}
-  header nav ul {}
-  header nav ul li {}
-  header nav ul li a {}
-  header nav ul li a:hover {}
-
   div#info section {
     width: 50%;
     float: left;
@@ -185,6 +177,7 @@ footer p#copyright {
     border: 2px solid rgba(0,0,0,0.15);
   }
   header {
+    padding: .4em 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -195,13 +188,14 @@ footer p#copyright {
   }
   header h1 {
     width: 960px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
   }
 
   header nav {
     width: 960px;
-    margin: 34px auto 0;
+    margin: 0 auto;
   }
   header nav ul {}
   header nav ul li {}
