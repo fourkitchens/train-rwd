@@ -1,5 +1,5 @@
 name        = Web Chef Café
-description = A basic responsive Drupal theme for training and demo purposes. Built with ❤ by Four Kitchens.
+description = A basic responsive Drupal theme for training and demo purposes. Built with ❤ by <a href="http://fourkitchens.com">Four Kitchens</a>.
 core        = 7.x
 engine      = phptemplate
 
