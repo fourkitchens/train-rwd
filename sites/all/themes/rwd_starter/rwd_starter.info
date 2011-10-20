@@ -1,0 +1,58 @@
+name        = Responsive Training Starterkit
+description = A responsive starter Drupal theme for training and demo purposes. Built with ❤ by Four Kitchens.
+core        = 7.x
+engine      = phptemplate
+
+;
+; First, we FOAD
+; http://sonspring.com/journal/html5-in-drupal-7 /via morten.dk
+;
+
+stylesheets[all][] = foad/field.css
+stylesheets[all][] = foad/node.css
+stylesheets[all][] = foad/user.css
+stylesheets[all][] = foad/field.css
+stylesheets[all][] = foad/system.menus.css
+
+;
+; CSS
+;
+; Since we defined our media queries within the stylesheet,
+; it's fine to use the "all" media just like normal
+; 
+; Don't combine <link> attribute-based media queries with @media inside a stylesheet
+;
+
+stylesheets[all][]   = css/h5bp.css
+stylesheets[all][]   = css/style.css
+stylesheets[print][] = css/print.css
+
+;
+; Alternate method for defining stylesheets with media queries
+; - Use this if you want to split each media query into its own styleesheet
+; - Creates extra aggregation files.
+;
+; stylesheets[(only screen and min-width: 320px)][] = fake/path/to.css
+;
+
+;
+; JS
+;
+; We're not loading any by default but here's the syntax
+;
+
+; scripts[] = path/to.js
+
+;
+; Regions
+;
+
+regions[content] = Content
+regions[content_below] = Below content
+regions[sidebar] = Right sidebar
+regions[footer] = Footer
+
+;
+; Built by Four Kitchens
+; No rights reserved. 
+;
