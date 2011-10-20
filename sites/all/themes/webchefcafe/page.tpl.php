@@ -97,13 +97,18 @@
 
     <?php if ($main_menu || $secondary_menu): ?>
       <div id="navigation"><div class="section">
-        <?php print theme('links__system_main_menu', array('links' => $cafe_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
+        <ul id="main-menu-links" class="links inline clearfix">
+          <li><a href="#info">Location</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <?php /* print theme('links__system_main_menu', array('links' => $cafe_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); */ ?>
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
 
-    <?php if ($breadcrumb): ?>
+    <?php /* if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+    <?php endif; */ ?>
 
     <?php print $messages; ?>
 
