@@ -89,6 +89,13 @@ footer p#copyright {
     box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
     border: 1px solid rgba(0,0,0,0.25);
   }
+  div#info h2 {
+    margin: .75em 0 .5em;
+  }
+  div#info section h3 {
+      margin: 0;
+      padding: 1em 0 .5em;
+  }
 
   div#menu section {
     background: #ccc;
@@ -215,9 +222,18 @@ footer p#copyright {
   div#info section {
     width: 100%;
     float: none;
+    clear: both;
+    padding-bottom: 1em;
   }
   div#info section h3 {
     float: left;
+    clear: left;
+    width: 80px;
+    padding: 0;
+  }
+  div#info section ul,
+  div#info section address {
+    margin-left: 80px;
   }
 
   div#menu section {
