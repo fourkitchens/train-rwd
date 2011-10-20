@@ -19,6 +19,8 @@ h3 {}
 }
 #header #name-and-slogan {
   text-align: center;
+  font-size: 2em;
+  margin: 1em 0;
 }
 #header #name-and-slogan a,
 #header #name-and-slogan a:hover {
@@ -210,7 +212,7 @@ div#about {
     height: 0;
   }
   #navigation ul {
-    top: 70px;
+    top: 30px;
   }
   #navigation ul li {}
   #navigation ul li a {
