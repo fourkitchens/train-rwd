@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implements hook_init().
+ */
+function modernizr_forceredirect_init() {
+  $forceredirect = FALSE;
+  try {
+    modernizr();
+  } catch (ModernizrCookieNotSetException $ex) {
+    $forceredirect = TRUE;
+  }
+  
+  // Putting this here, to make sure that the variable exists
+  // if it is requested. The modernizr_forceredirect.js can be
+  // still loaded because of some caching.
+  drupal_add_js(array(
+    'modernizrForceredirect' => $forceredirect,
+  ), array('type' => 'setting', 'scope' => 'footer'));
+  
+  if ($forceredirect) {
+    // calling the modernizr module's init hook
+    // in order to get modernizr properly initialized
+    modernizr_init();
+    drupal_add_js(drupal_get_path('module', 'modernizr_forceredirect') .
+        '/modernizr_forceredirect.js');
+    
+    // aborting page execution here
+    drupal_deliver_page('');
+    exit;
+  }
+}

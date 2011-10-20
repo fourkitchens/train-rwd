@@ -1,0 +1,7 @@
+name = Modernizr force redirect
+description = This module ensures that the Modernizr cookie is always available
+core = 7.x
+dependencies[] = modernizr
+package = Modernizr
+files[] = modernizr_forceredirect.module
+files[] = modernizr_forceredirect.install

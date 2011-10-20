@@ -1,0 +1,338 @@
+<?php
+
+define('MODERNIZR_VERSION_REGEX', '/Modernizr [v]?([\d\.]*)/');
+define('MODERNIZR_SERVER_SIDE_DEFAULT',FALSE);
+
+/**
+ * Implements hook_init().
+ */
+function modernizr_init() {
+  $path = FALSE;
+
+  if (version_compare(modernizr_get_version(), '2.0') == -1) {
+    $path = modernizr_get_path();
+  }
+  else {
+    // We need Modernizr to load as soon as possible, because it can affect
+    // the presentation of a page. The options below ensure that it happens.
+    drupal_add_js(
+      modernizr_get_path(),
+      array(
+        'type' => 'file',
+        'scope' => 'header',
+        'group' => JS_LIBRARY,
+        'every_page' => TRUE,
+        'weight' => -1000,
+        'preprocess' => 0,
+      )
+    );
+  }
+
+  $serverside = (bool) variable_get('modernizr_serverside', MODERNIZR_SERVER_SIDE_DEFAULT);
+
+  drupal_add_js(array(
+    'modernizrPath' => $path,
+    'modernizrServerside' => $serverside,
+  ), array('type' => 'setting', 'scope' => 'footer'));
+  if ($path || $serverside) {
+    drupal_add_js(drupal_get_path('module', 'modernizr') . '/modernizr_loader.js');
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function modernizr_permission() {
+  return array(
+    'administer modernizr' => array(
+      'title' => t('Administer Modernizr'),
+      'description' => t('Perform administration tasks for Modernizr.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function modernizr_menu() {
+  $items = array();
+
+  $items['admin/config/development/modernizr'] = array(
+    'title' => 'Modernizr settings',
+    'description' => t('Choose how to include Modernizr, or rebuild your library.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('modernizr_admin_form'),
+    'file' => 'modernizr.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array('administer modernizr'),
+  );
+  $items['admin/config/development/modernizr/rebuild'] = array(
+    'title' => 'Rebuild Modernizr',
+    'description' => t('Updates tests and generates rebuild link.'),
+    'page callback' => 'modernizr_generate_url',
+    'file' => 'modernizr.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array('administer modernizr'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_library_info().
+ *
+ * Note: the 'js' array in the 'files' section is intentionally left empty.
+ * The reason is that the modernizr js should not be loaded directly by
+ * Drupal.
+ *
+ * @return array
+ */
+function modernizr_library_info() {
+  $libraries = array();
+
+  $libraries['modernizr'] = array(
+    'title' => t('Modernizr'),
+    'vendor url' => 'http://modernizr.com',
+    'download url' => 'http://modernizr.com',
+    'version arguments' => array(
+      'file' => 'modernizr.min.js',
+      'pattern' => MODERNIZR_VERSION_REGEX,
+    ),
+    'files' => array(
+      'js' => array(
+        // This array is intentionally left blank.
+      ),
+    ),
+    'integraton files' => array(
+      'modernizr' => array(
+        'js' => array(
+          drupal_get_path('module', 'modernizr') . '/modernizr_loader.js',
+        ),
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Returns the modernizr instance.
+ *
+ * @return Modernizr
+ */
+function modernizr() {
+  return Modernizr::getInstance();
+}
+
+/**
+ * Returns the full path of modernizr, along with the filename.
+ *
+ * @return string
+ */
+function modernizr_get_path() {
+  $path = &drupal_static(__FUNCTION__);
+
+  if ($path === NULL) {
+    $paths = array();
+
+    if (module_exists('libraries')) {
+      $library_path = libraries_get_path('modernizr');
+      if (file_exists($library_path)) {
+        $paths[] = $library_path;
+      }
+    }
+
+    $paths[] = drupal_get_path('module', 'modernizr');
+
+    foreach ($paths as $p) {
+      if ($files = file_scan_directory($p, '/^modernizr[a-z\.-]*\.js$/')) {
+        $path = reset($files)->uri;
+        break;
+      }
+    }
+  }
+
+  return $path;
+}
+
+/**
+ * Guesses the modernizr library version.
+ *
+ * This function is using a regex, which
+ * assumes that the format of the version
+ * string won't change. If it changes,
+ * feel free to submit a bug report.
+ *
+ * @return mixed The version number if
+ * exists, or a boolean FALSE if it can't be
+ * determined.
+ */
+function modernizr_get_version() {
+  $version = &drupal_static(__FUNCTION__);
+
+  if ($version === NULL) {
+    if ($cached = cache_get('modernizr_version')) {
+      $version = $cached->data;
+    }
+    else {
+      $version = FALSE;
+      $modernizr_path = modernizr_get_path();
+      if (file_exists($modernizr_path)) {
+        $modernizr = file_get_contents($modernizr_path);
+
+        $matches = array();
+        preg_match(MODERNIZR_VERSION_REGEX, $modernizr, $matches);
+
+        if (isset($matches[1])) {
+          $version = $matches[1];
+          if ($version) {
+            cache_set('modernizr_version', $version);
+          }
+        }
+
+        unset($modernizr);
+      }
+    }
+  }
+
+  return $version;
+}
+
+/**
+ * Implements MODULE_preprocess_html().
+ *
+ * Reads async-loaded CSS/JS from theme .info files. Stores info in variable.
+ * Prints Modernizr.load() calls into $modernizr var inside html.tpl.php
+ */
+function modernizr_preprocess_html(&$vars, $hook) {
+  $load = array();
+  $num_tests = 0;
+
+  // Make a list of base themes and the current theme.
+  $themes = $GLOBALS['base_theme_info'];
+  $themes[] = $GLOBALS['theme_info'];
+  foreach (array_keys($themes) as $key) {
+    $theme_path = dirname($themes[$key]->filename) . '/';
+    if (isset($themes[$key]->info['modernizr'])) {
+      // Loop through Modernizr calls and assemble Load variable.
+      foreach (array_keys($themes[$key]->info['modernizr']) as $test) {
+        $load[$num_tests]['test'] = $test;
+        foreach (array_keys($themes[$key]->info['modernizr'][$test]) as $action) {
+          foreach ($themes[$key]->info['modernizr'][$test][$action] as $asset) {
+            $load[$num_tests]['actions'][$action][] = $asset;
+          }
+        }
+        $num_tests++;
+      }
+    }
+  }
+
+  // store in DB
+  variable_set('modernizr_load',$load);
+
+  // Print the M.load() calls out to $modernizr inside html.tpl.php
+  $vars['modernizr'] = _modernizr_load_generate();
+}
+
+/**
+ * Helper function to print the M.load() calls out
+ * to $modernizr inside html.tpl.php
+ */
+function _modernizr_load_generate() {
+
+  $load = variable_get('modernizr_load','');
+
+  $num_tests = 1;
+  $output = '';
+  $output .= '<script>'."\n";
+  $output .= 'Modernizr.load([';
+  foreach ($load as $call) {
+    $output .= ($num_tests > 1) ? ',' : '';
+    $output .= '{'."\n";
+    $output .= '  test: '. $call['test'] .','."\n";
+    // Print each action and its resources
+    foreach ($call['actions'] as $action => $resources) {
+      $output .= '  '. sprintf('%-4s',$action) .': ';
+      // single resource
+      if (count($resources) == 1) {
+        $output .= "'". $resources[0] ."',\n";
+      }
+      // multiple resources for this action
+      else {
+        $output .= '[';
+        foreach ($resources as $resource) {
+          $output .= "'". $resource ."',";
+        }
+        // truncate last comma
+        $output = substr($output, 0, -1);
+        $output .= "],\n";
+      }
+    }
+    // truncate last comma
+    $output = substr($output, 0, -1);
+    $output .= "\n}";
+    $num_tests++;
+  }
+  $output .= ($num_tests > 1) ? ']' : '';
+  $output .= ');'."\n";
+  $output .= '</script>'."\n";
+
+  return $output;
+}
+
+/**
+ * Implements MODULE_preprocess_maintenance_page().
+ */
+function modernizr_preprocess_maintenance_page(&$vars, $hook) {
+  modernizr_preprocess_html($vars, $hook);
+}
+
+
+/**
+ * Asks other Drupal modules which Modernizr tests they needs.
+ *
+ * @return array
+ */
+function modernizr_api_list($reset = FALSE) {
+  $tests = &drupal_static(__FUNCTION__);
+  if (!isset($tests) || $reset) {
+    $tests = module_invoke_all('modernizr_info');
+    drupal_alter('modernizr_info', $tests);
+  }
+
+  // See module_implements() for an explanation of this cast.
+  return (array) $tests;
+}
+
+/**
+ * Implements hook_modernizr_info().
+ *
+ * Add cssclasses
+ * - Automatically adds cssclasses to download links since most users want this.
+ * Add iepp (HTML5 Shim)
+ * - Includes some utility JS that allows IE to recognize HTML5 elements
+ * Add load
+ * - Includes yepnope.js as Modernizr.load() - allows async css/js loading.
+ */
+function modernizr_modernizr_info() {
+  $tests['cssclasses'] = array(
+    'test' => 'cssclasses',
+    'type' => 'Modernizr',
+    'module' => 'Modernizr',
+    'desc' => 'Utility - Allows Modernizr to inject CSS classes into &lt;html&gt;',
+  );
+  $tests['iepp'] = array(
+    'test' => 'iepp',
+    'type' => 'Modernizr',
+    'module' => 'Modernizr',
+    'desc' => 'Utility - Provides HTML5 Shim/<abbr title="Internet Explorer Print Protector">IEPP</abbr>',
+  );
+  $tests['load'] = array(
+    'test' => 'load',
+    'type' => 'Modernizr',
+    'module' => 'Modernizr',
+    'desc' => 'Utility - Provides yepnope.js, an asynchronous CSS/JS loader and allows use of Modernizr.load()',
+  );
+
+  return $tests;
+}

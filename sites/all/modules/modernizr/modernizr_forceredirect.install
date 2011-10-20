@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function modernizr_forceredirect_install() {
+  // enabling the serverside support
+  // and disabling the admin panel for it
+  variable_set('modernizr_serverside', 2);
+  
+  // setting the module weight to a small value
+  db_update('system')
+    ->fields(array(
+      'weight' => -99,
+    ))
+    ->condition('type', 'module')
+    ->condition('name', 'modernizr_forceredirect')
+    ->execute();
+}
