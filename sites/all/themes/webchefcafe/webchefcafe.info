@@ -38,6 +38,14 @@ stylesheets[print][] = css/print.css
 ;
 ; JS
 ;
+; We're not loading any by default but here's the syntax
+;
+
+; scripts[] = path/to.js
+
+;
+; Regions
+;
 
 regions[content] = Content
 regions[content_below] = Below content
