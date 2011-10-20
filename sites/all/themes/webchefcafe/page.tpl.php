@@ -89,6 +89,12 @@
 
     <div id="main-wrapper"><div id="main" class="clearfix">
 
+      <?php if ($page['sidebar']): ?>
+        <div id="sidebar" class="column sidebar"><div class="section">
+          <?php print render($page['sidebar']); ?>
+        </div></div> <!-- /.section, /#sidebar -->
+      <?php endif; ?>
+
       <div id="content" class="column"><div class="section">
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
@@ -100,12 +106,6 @@
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
-
-      <?php if ($page['sidebar']): ?>
-        <div id="sidebar" class="column sidebar"><div class="section">
-          <?php print render($page['sidebar']); ?>
-        </div></div> <!-- /.section, /#sidebar -->
-      <?php endif; ?>
 
       <?php if ($page['content_below']): ?>
         <div id="content-below" class="column"><div class="section">
