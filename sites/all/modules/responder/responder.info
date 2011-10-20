@@ -1,0 +1,11 @@
+name = Responder
+description = Alters Drupal modules' CSS output to fully enable mobile-first responsive themes.
+core = 7.x
+package = Mobile
+
+; Information added by drupal.org packaging script on 2011-09-25
+version = "7.x-1.0"
+core = "7.x"
+project = "responder"
+datestamp = "1316924507"
+

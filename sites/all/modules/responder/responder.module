@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Provides responsive themes with mobile-first module CSS
+ */
+
+
+/**
+ * Set the Responder defaults. These are all configurable via admin settings.
+ */
+define('RESPONDER_ACTIVE_DEFAULT', TRUE);
+define('RESPONDER_MQ_PROPERTY_DEFAULT', 'min-width');
+define('RESPONDER_MQ_VALUE_DEFAULT', 720);
+define('RESPONDER_MQ_UNITS_DEFAULT', 'px');
+
+
+
+/**
+ * Implements hook_menu().
+ */
+function responder_menu() {
+  $items = array();
+  $items['admin/config/media/responder'] = array(
+    'title' => 'Responder',
+    'description' => 'Configure the media query settings for Drupal\'s system CSS files',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('responder_admin'),
+    'access arguments' => array('access administration pages'),
+    'file' => 'responder.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_css_alter().
+ *
+ * Alters media setting for each stylesheet, wrapping them in media queries.
+ * Only alter core and module CSS that are setting a generic media = all.
+ * If a module adds CSS with a specific media (query) we'll respect their intent.
+ * If a stylesheet is altered, force the every_page setting to 1, reducing the number of aggregation files.
+ */
+function responder_css_alter(&$css) {
+  if (variable_get('responder_active', RESPONDER_ACTIVE_DEFAULT)) {
+    foreach ($css as $path => $info) {
+      if (($info['group'] == CSS_SYSTEM || $info['group'] == CSS_DEFAULT) && $info['media'] == 'all') {
+        $css[$path]['media'] = 'all and ('.variable_get('responder_mq_property', RESPONDER_MQ_PROPERTY_DEFAULT).': '. variable_get('responder_mq_value', RESPONDER_MQ_VALUE_DEFAULT) . variable_get('responder_mq_units', RESPONDER_MQ_UNITS_DEFAULT) .')';
+        $css[$path]['every_page'] = TRUE;
+      }
+    }
+  }
+
+  return $css;
+}
+

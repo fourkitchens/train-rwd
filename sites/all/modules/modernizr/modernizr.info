@@ -1,0 +1,12 @@
+; $Id: modernizr.info,v 1.1.4.1 2010/10/26 15:55:32 yorirou Exp $
+name = Modernizr
+description = Modernizr integration to Drupal
+core = 7.x
+files[] = modernizr.module
+
+; Information added by drupal.org packaging script on 2010-11-01
+version = "7.x-1.0"
+core = "7.x"
+project = "modernizr"
+datestamp = "1288647063"
+

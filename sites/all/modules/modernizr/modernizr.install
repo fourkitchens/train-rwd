@@ -1,0 +1,23 @@
+<?php
+// $Id: modernizr.install,v 1.1.4.1 2010/10/26 15:55:32 yorirou Exp $
+
+/**
+ * Implements hook_requirements.
+ */
+function modernizr_requirements($phase) {
+  $requirements = array();
+  switch ($phase) {
+    case 'runtime':
+      $installed = file_exists(drupal_get_path('module', 'modernizr') . '/modernizr.min.js');
+      $requirements[] = array(
+        'title' => t('Modernizr library'),
+        'value' => $installed ? t('Installed') : t('Missing'),
+        'description' => t('Modernizr Javascript Library. Download it from !modernizr-site, copy it to the module directory and rename it to modernizr.min.js.', array(
+          '!modernizr-site' => l(t('here'), 'http://modernizr.com'),
+        )),
+        'severity' => $installed ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+      );
+      break;
+  }
+  return $requirements;
+}

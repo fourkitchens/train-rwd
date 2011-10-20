@@ -1,0 +1,12 @@
+<?php
+// $Id: modernizr.module,v 1.1.4.1 2010/10/26 15:55:32 yorirou Exp $
+
+/**
+ * Implements hook_init().
+ */
+function modernizr_init() {
+  drupal_add_js(array(
+    'modernizrPath' => drupal_get_path('module', 'modernizr') . '/modernizr.min.js',
+  ), array('type' => 'setting', 'scope' => 'footer'));
+  drupal_add_js(drupal_get_path('module', 'modernizr') . '/modernizr_loader.js');
+}
