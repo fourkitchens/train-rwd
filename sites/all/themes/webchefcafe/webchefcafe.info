@@ -39,7 +39,10 @@ stylesheets[print][] = css/print.css
 ; JS
 ;
 
-
+regions[content] = Content
+regions[content_below] = Below content
+regions[sidebar] = Right sidebar
+regions[footer] = Footer
 
 ;
 ; Built by Four Kitchens
