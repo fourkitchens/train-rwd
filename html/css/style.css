@@ -1,0 +1,44 @@
+/* ==|== primary styles =====================================================
+   Author: ☺
+   ========================================================================== */
+
+html, body {
+  padding: 0;
+}
+
+div#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  background: #333;
+  color: #ccc;
+}
+header h1 {
+  padding: 1em 0 0 1em;
+}
+header nav {}
+header nav ul {}
+header nav ul li {
+  display: inline-block;
+  padding: 1em;
+}
+header nav ul li a {
+  diaply: block;
+  color: #abf;
+}
+
+div#main {
+  clear: both;
+  padding: 0 1em;
+}
+
+footer {
+  display: block;
+  padding: 1em;
+  background: #333;
+  color: #ccc;
+}
+footer p#copyright {
+}
