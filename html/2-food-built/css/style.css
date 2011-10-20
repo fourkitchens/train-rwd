@@ -2,7 +2,7 @@
    Author: 
    ========================================================================== */
 
-
+body {background: #aaa;}
 
 div#container {width: 100%; }
 
@@ -48,7 +48,7 @@ div#main {
   margin: 0;
   padding: 1em;
   clear: both;
-  background: #eee;
+  background: #f3f7f3;
 }
 
 div#info {
