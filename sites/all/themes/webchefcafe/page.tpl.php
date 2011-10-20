@@ -71,31 +71,10 @@
 
     <div id="header"><div class="section clearfix">
 
-      <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-            <?php if ($title): ?>
-              <div id="site-name"><strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong></div>
-            <?php else: /* Use h1 when the content title is empty */ ?>
-              <h1 id="site-name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
-            <?php endif; ?>
-          <?php endif; ?>
+      <div id="name-and-slogan">
+        Web Chef Café (finished theme)
+      </div> <!-- /#name-and-slogan -->
 
-          <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
-      <?php endif; ?>
-
-      <?php print render($page['header']); ?>
-
-    </div></div> <!-- /.section, /#header -->
-
-    <?php if ($main_menu || $secondary_menu): ?>
       <div id="navigation"><div class="section">
         <ul id="main-menu-links" class="links inline clearfix">
           <li><a href="#info">Location</a></li>
@@ -103,7 +82,8 @@
           <li><a href="#about">About</a></li>
         </ul>
       </div></div> <!-- /.section, /#navigation -->
-    <?php endif; ?>
+
+    </div></div> <!-- /.section, /#header -->
 
     <?php print $messages; ?>
 
