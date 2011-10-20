@@ -4,31 +4,43 @@
 
 body {background: #aaa;}
 
-div#container {width: 100%; }
+#page-wrapper {width: 100%; }
 
 a {color: #66B360; }
 a:visited {color: #86c380; }
 h2 {}
 h3 {}
 
-header,
-footer {
+#header,
+#footer {
   background: #66B360;
   color: #fff;
   padding: .4em;
 }
-header h1 {
+#header #name-and-slogan {
   text-align: center;
 }
-header h1 a,
-header h1 a:hover {
+#header #name-and-slogan a,
+#header #name-and-slogan a:hover {
+  font-size: 2em;
   color: #fff;
 }
 
-header nav {}
-header nav ul {}
-header nav ul li {}
-header nav ul li a {
+#navigation h2 {
+  display: none;
+}
+#navigation {
+  background: #66B360;
+}
+#navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  z-index: 20;
+}
+#navigation ul li {}
+#navigation ul li a {
   display: block;
   margin: 6px;
   padding: 10px 4px;
@@ -40,7 +52,7 @@ header nav ul li a {
   font-weight: 700;
   font-size: 1.2em;
 }
-header nav ul li a:visited {
+#navigation ul li a:visited {
   color: #444;
 }
 
@@ -69,17 +81,18 @@ div#about {
   clear: both;
 }
 
-footer {}
-footer p#copyright {
+#footer {}
+#footer p#copyright {
   padding-left: 1em;
 }
+#footer a {color: #fff;}
 
 
 /* ==|== media queries ====================================================== */
 
 @media only screen and (min-width: 320px) {
 
-  header h1 {
+  #header #name-and-slogan {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   }
 
@@ -130,7 +143,7 @@ footer p#copyright {
 
 @media only screen and (min-width: 480px) {
 
-  header nav ul li a {
+  #navigation ul li a {
     float: left;
     width: 29%;
     box-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -140,7 +153,7 @@ footer p#copyright {
     -o-transition: background .1s ease-in-out;
    transition: background .1s ease-in-out;
   }
-  header nav ul li a:hover {
+  #navigation ul li a:hover {
     color: #000;
     background: #c6f3c0;
     box-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -168,14 +181,14 @@ footer p#copyright {
 
 @media only screen and (min-width: 960px) {
 
-  div#container {
+  #page-wrapper {
     width: 960px;
     margin: 0 auto 10em;
     border-radius: 7px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.2);
     border: 2px solid rgba(0,0,0,0.15);
   }
-  header {
+  #header {
     padding: .4em 0;
     position: absolute;
     left: 0;
@@ -185,20 +198,22 @@ footer p#copyright {
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     border-bottom: 2px solid rgba(0,0,0,0.15);
   }
-  header h1 {
+  #header #name-and-slogan {
     width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     text-align: left;
   }
 
-  header nav {
+  #navigation {
     width: 960px;
     margin: 0 auto;
+    height: 0;
   }
-  header nav ul {}
-  header nav ul li {}
-  header nav ul li a {
+  #navigation ul {
+    top: 70px;
+  }
+  #navigation ul li {}
+  #navigation ul li a {
     box-shadow: 0 0 9px rgba(0,0,0,0.5);
   }
 
@@ -252,7 +267,7 @@ footer p#copyright {
     clear: left;
   }
 
-  footer {
+  #footer {
     margin: 0 -2px;
     border: 2px solid rgba(0,0,0,0.1);
     border-top: 0;
