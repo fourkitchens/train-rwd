@@ -164,7 +164,6 @@ footer p#copyright {
     margin: 0 2% 1em 2%;
   }
 
-
 }/* (min-width: 768px) */
 
 @media only screen and (min-width: 960px) {
@@ -243,6 +242,14 @@ footer p#copyright {
 
   div#about {
     clear: both;
+  }
+  div#about p {
+    width: 46%;
+    margin: 0 2% 1em;
+    float: left;
+  }
+  div#about p:nth-of-type(2n+1) {
+    clear: left;
   }
 
   footer {
