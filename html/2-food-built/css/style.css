@@ -20,6 +20,11 @@ footer {
 header h1 {
   text-align: center;
 }
+header h1 a,
+header h1 a:hover {
+  color: #fff;
+}
+
 header nav {}
 header nav ul {}
 header nav ul li {}
@@ -50,27 +55,15 @@ div#info {
   background: #cdc;
   padding: 0 1em;
 }
+div#info ul {
+  margin: 0;
+  padding: 0;
+}
+div#info ul li {
+  display: block;
+}
 
-div#menu {
-}
-div#menu section {
-  margin: 0 .25em;
-}
-div#menu h3 {
-  background: #73530A;
-  color: #fff;
-  padding: .5em;
-  margin: 1em 0 0 0;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
-}
-div#menu h4 {
-  background: #bbb;
-  color: #000;
-  padding: .3em .7em;
-  margin: .5em 0 .2em 0;
-  text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
-  border-radius: 2px;
-}
+div#menu {}
 
 div#about {
   clear: both;
@@ -90,16 +83,60 @@ footer p#copyright {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   }
 
-  div#menu h3 {
+  div#info {
+    border-radius: 5px;
+    margin-bottom: 1em;
+    box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
+    border: 1px solid rgba(0,0,0,0.25);
+  }
+
+  div#menu section {
+    background: #ccc;
+    margin: 0 .25em 2em;
+    box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
+    border: 1px solid rgba(0,0,0,0.25);
     border-radius: 5px;
   }
+  div#menu h3 {
+    background: #73530A;
+    color: #fff;
+    padding: .5em;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  }
   div#menu .item {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-bottom: 4px;
   }
   div#menu h4 {
-    margin-left: -3px;
-    margin-right: -3px;
+    background: #f7f5ee;
+    color: #000;
+    padding: .3em .7em;
+    margin: .5em -4px .2em -4px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+    border-radius: 2px;
+  }
+
+}/* (min-width: 320px) */
+
+@media only screen and (min-width: 480px) {
+
+  header nav ul li a {
+    float: left;
+    width: 29%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    -webkit-transition: background .1s ease-in-out;
+    -moz-transition: background .1s ease-in-out;
+    -ms-transition: background .1s ease-in-out;
+    -o-transition: background .1s ease-in-out;
+   transition: background .1s ease-in-out;
+  }
+  header nav ul li a:hover {
+    color: #000;
+    background: #c6f3c0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
   }
 
 }/* (min-width: 480px) */
@@ -111,21 +148,8 @@ footer p#copyright {
   header nav {}
   header nav ul {}
   header nav ul li {}
-  header nav ul li a {
-    float: left;
-    width: 30%;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
-    -webkit-transition: background .2s ease-in-out;
-    -moz-transition: background .2s ease-in-out;
-    -ms-transition: background .2s ease-in-out;
-    -o-transition: background .2s ease-in-out;
-   transition: background .2s ease-in-out;
-  }
-  header nav ul li a:hover {
-    color: #000;
-    background: #c6f3c0;
-    box-shadow: 0 0 5px rgba(0,0,0,0.4);
-  }
+  header nav ul li a {}
+  header nav ul li a:hover {}
 
   div#info section {
     width: 50%;
@@ -137,7 +161,7 @@ footer p#copyright {
   }
   div#menu section {
     float: left;
-    width: 46%;
+    width: 44%;
     margin: 0 2% 1em 2%;
   }
 
@@ -148,48 +172,57 @@ footer p#copyright {
 
   div#container {
     width: 960px;
-    margin: 0 auto;
+    margin: 0 auto 10em;
     border-radius: 7px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    border: 2px solid rgba(0,0,0,0.15);
   }
   header {
-    margin-top: 1em;
-    border-radius: 7px 7px 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    border-bottom: 2px solid rgba(0,0,0,0.15);
   }
   header h1 {
+    width: 960px;
+    margin: 0 auto;
     text-align: left;
-    margin-left: .5em;
-    width: 200px;
   }
-  /* This is just for fun. Mouse over the title and watch it spin! */
-  header h1:hover {
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-transform-origin: left middle;
-    -webkit-animation-delay: .5sec;
+
+  header nav {
+    width: 960px;
+    margin: 34px auto 0;
   }
-  header nav {}
   header nav ul {}
   header nav ul li {}
-  header nav ul li a {}
+  header nav ul li a {
+    box-shadow: 0 0 9px rgba(0,0,0,0.5);
+  }
 
   div#main {
     padding-top: 2em;
+    margin-top: 120px;
   }
 
   div#info {
     max-width: 420px;
     float: right;
     border-radius: 3px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+  }
+  div#info section {
+    width: 100%;
+    float: none;
+  }
+  div#info section h3 {
+    float: left;
   }
 
   div#menu section {
     width: 270px;
-    margin: 0 .25em 2em;
+    margin: 0 .4em 2em;
   }
   div#menu section:nth-child(2n) {
     clear: left;
@@ -203,7 +236,9 @@ footer p#copyright {
   }
 
   footer {
-    margin-bottom: 1em;
+    margin: 0 -2px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-top: 0;
     border-radius: 0 0 7px 7px;
   }
 
