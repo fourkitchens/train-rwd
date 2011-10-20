@@ -231,7 +231,7 @@ footer p#copyright {
 
   div#menu section {
     width: 270px;
-    margin: 0 .4em 2em;
+    margin: 0 .75em 2em;
   }
   div#menu section:nth-child(2n) {
     clear: left;
