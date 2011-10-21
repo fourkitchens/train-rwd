@@ -1,8 +1,10 @@
 /* ==|== primary styles =====================================================
-   Author: ☺
+   Author: Four Kitchens and YOU!
    ========================================================================== */
 
-html, body {padding: 0; }
+html, body {
+  padding: 0;
+}
 
 div#container {
   width: 960px;
@@ -23,7 +25,7 @@ header nav ul li {
   padding: 1em;
 }
 header nav ul li a {
-  diaply: block;
+  display: block;
   color: #abf;
 }
 

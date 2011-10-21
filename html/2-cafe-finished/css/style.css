@@ -1,15 +1,21 @@
 /* ==|== primary styles =====================================================
-   Author: 
+   Author: Four Kitchens and YOU!
    ========================================================================== */
 
-body {background: #aaa;}
+body {
+  background: #aaa;
+}
 
-div#container {width: 100%; }
+div#container {
+  width: 100%;
+}
 
-a {color: #66B360; }
-a:visited {color: #86c380; }
-h2 {}
-h3 {}
+a {
+  color: #66B360;
+}
+a:visited {
+  color: #86c380;
+}
 
 header,
 footer {
@@ -25,9 +31,6 @@ header h1 a:hover {
   color: #fff;
 }
 
-header nav {}
-header nav ul {}
-header nav ul li {}
 header nav ul li a {
   display: block;
   margin: 6px;
@@ -63,13 +66,10 @@ div#info ul li {
   display: block;
 }
 
-div#menu {}
-
 div#about {
   clear: both;
 }
 
-footer {}
 footer p#copyright {
   padding-left: 1em;
 }
@@ -126,7 +126,7 @@ footer p#copyright {
     border-radius: 2px;
   }
 
-}/* (min-width: 320px) */
+} /* (min-width: 320px) */
 
 @media only screen and (min-width: 480px) {
 
@@ -146,7 +146,7 @@ footer p#copyright {
     box-shadow: 0 0 5px rgba(0,0,0,0.4);
   }
 
-}/* (min-width: 480px) */
+} /* (min-width: 480px) */
 
 @media only screen and (min-width: 640px) {
 
@@ -164,7 +164,7 @@ footer p#copyright {
     margin: 0 2% 1em 2%;
   }
 
-}/* (min-width: 768px) */
+} /* (min-width: 768px) */
 
 @media only screen and (min-width: 960px) {
 
@@ -196,8 +196,6 @@ footer p#copyright {
     width: 960px;
     margin: 0 auto;
   }
-  header nav ul {}
-  header nav ul li {}
   header nav ul li a {
     box-shadow: 0 0 9px rgba(0,0,0,0.5);
   }
@@ -259,14 +257,14 @@ footer p#copyright {
     border-radius: 0 0 7px 7px;
   }
 
-}/* (min-width: 960px) */
+} /* (min-width: 960px) */
 
 
 @-webkit-keyframes spin {
- from {
-   -webkit-transform: rotate(0deg);
- }
- to {
-   -webkit-transform: rotate(360deg);
- }
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
