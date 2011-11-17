@@ -1,0 +1,8 @@
+name        = Kitchen Colors
+description = 4K Training color scheme for Bartik
+screenshot  = screenshot.png
+core        = 7.x
+
+base theme  = bartik
+
+stylesheets[all][]   = css/colors.css
