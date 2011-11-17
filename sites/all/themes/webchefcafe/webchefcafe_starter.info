@@ -1,5 +1,5 @@
-name        = Web Chef Café
-description = A basic responsive Drupal theme for training and demo purposes. Built with ❤ by <a href="http://fourkitchens.com">Four Kitchens</a>.
+name        = Web Chef Café (starter)
+description = An empty, starter version of the Web Chef Café theme. Hack away! Built with ❤ by <a href="http://fourkitchens.com">Four Kitchens</a>.
 core        = 7.x
 engine      = phptemplate
 

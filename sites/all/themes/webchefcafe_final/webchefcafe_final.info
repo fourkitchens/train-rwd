@@ -1,5 +1,5 @@
-name        = Responsive Training Starterkit
-description = A responsive starter Drupal theme for training and demo purposes. Built with ❤ by <a href="http://fourkitchens.com">Four Kitchens</a>.
+name        = Web Chef Café (final)
+description = Welcome to the Web Chef Café! This theme is responsive. Built with ❤ by <a href="http://fourkitchens.com">Four Kitchens</a>.
 core        = 7.x
 engine      = phptemplate
 
