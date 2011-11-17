@@ -3,5 +3,5 @@ sites/*/settings.*.php
 sites/*/*.settings.php
 
 # Ignore files directories.
-sites/*/files
+sites/*/files/color
 sites/*/private

@@ -1,0 +1,55 @@
+body,
+body.overlay {
+  color: #3b3b3b;
+}
+.comment .comment-arrow {
+  border-color: #ffffff;
+}
+#page,
+#main-wrapper,
+#main-menu-links li a.active,
+#main-menu-links li.active-trail a {
+  background: #ffffff;
+}
+.tabs ul.primary li a.active {
+  background-color: #ffffff;
+}
+.tabs ul.primary li.active a {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+#header {
+  background-color: #1f7119;
+  background-image: -moz-linear-gradient(top, #50964a 0%, #1f7119 100%);
+  background-image: -ms-linear-gradient(top, #50964a 0%, #1f7119 100%);
+  background-image: -o-linear-gradient(top, #50964a 0%, #1f7119 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #50964a), color-stop(1, #1f7119));
+  background-image: -webkit-linear-gradient(top, #50964a 0%, #1f7119 100%);
+  background-image: linear-gradient(top, #50964a 0%, #1f7119 100%);
+}
+a {
+  color: #1e7118;
+}
+a:hover,
+a:focus {
+  color: #23a71a;
+}
+a:active {
+  color: #39d92d;
+}
+.sidebar .block {
+  background-color: #f6f6f2;
+  border-color: #f9f9f9;
+}
+#page-wrapper,
+#footer-wrapper {
+  background: #292929;
+}
+.region-header,
+.region-header a,
+.region-header li a.active,
+#name-and-slogan,
+#name-and-slogan a,
+#secondary-menu-links li a {
+  color: #fffeff;
+}
