@@ -13,7 +13,7 @@ html {
   box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
 }
 
-div#container {
+#container {
   width: 960px;
   margin: 0 auto;
 }
@@ -32,10 +32,6 @@ header h1 {
   text-align: left;
   color: #666;
   font-weight: normal;
-}
-
-header h1:nth-last-child {
-  color: #ffcc00;
 }
 
 nav {
