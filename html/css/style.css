@@ -6,6 +6,13 @@ html, body {
   padding: 0;
 }
 
+html {
+  height: 100%;
+  -webkit-box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
+}
+
 div#container {
   width: 960px;
   margin: 0 auto;
@@ -85,6 +92,8 @@ nav ul li:hover a {
   clear: both;
   padding: 1em;
   min-height: 300px;
+  border-bottom: 1px #555 dotted;
+  margin-bottom: 5px;
 }
 
 footer {
