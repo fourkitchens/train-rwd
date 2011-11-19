@@ -148,9 +148,27 @@ div.bio-info dl dd {
   margin-bottom: 5px;
 }
 
-#main > p {
+#main p,
+#main blockquote {
   overflow: hidden;
   line-height: 1.5em;
+}
+
+#main blockquote {
+  border-left: 5px solid #aaa;
+  padding-left: 20px;
+}
+
+img.thumbnail {
+  width: 100px;
+}
+img.floatleft {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+img.floatright {
+  float: right;
+  margin: 0 0 20px 20px;
 }
 
 footer {
