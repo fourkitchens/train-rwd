@@ -22,12 +22,9 @@ body {
   width: 100%;
 }
 
-a {
-  color: #66B360;
-}
-
+a, 
 a:visited {
-  color: #86c380;
+  color: #66B360;
 }
 
 h1 {
@@ -36,29 +33,22 @@ h1 {
 
 header {
   text-align: center;
+  background: url(../../css/webchef-logo.png) top left no-repeat, url(../../css/webchef-logo.png) top right no-repeat;
+  background-size: 30px;
 }
 
-footer {
-  padding: 1em;
-  margin-bottom: 1em;
-  background: #666;
-  color: #eee;
-  text-shadow: 1px 1px 1px #000;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+header h1 {
+  line-height: 1em;
 }
 
-header h1 a {
-  color: #eee;
+header h1 a, 
+header h1 a:visited {
+  color: #555;
   text-decoration: none;
 }
 
 header h1 a:hover {
-  color: #fff;
+  color: #333;
 }
 
 nav a {
@@ -72,10 +62,23 @@ nav a {
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2em;
+  border: 1px solid #555;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
 }
 
 nav a:hover {
   color: #444;
+}
+
+#menu h4 {
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  border-bottom: 1px dotted #555;
+  margin: 2px 0;
+  font-weight: normal;
+  padding: .3em .7em;
 }
 
 #main {
@@ -87,8 +90,9 @@ nav a:hover {
 }
 
 #info {
-  background: #cdc;
+  background: #49593F;
   padding: 0 1em;
+  color: #ABBF8F;
 }
 
 #info ul {
@@ -104,6 +108,20 @@ nav a:hover {
   clear: both;
 }
 
+footer {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #222;
+  color: #eee;
+  text-shadow: 1px 1px 1px #000;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
 footer p#copyright {
   padding-left: 1em;
 }
@@ -113,15 +131,18 @@ footer p#copyright {
 
 @media only screen and (min-width: 320px) {
 
+  header {
+    margin: 0 10px;
+  }
+
   header h1 {
     font-size: 2em;
   }
 
   #info {
-    border-radius: 5px;
     margin-bottom: 1em;
     box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid rgba(108,140,110,0.25);
   }
 
   #info h2 {
@@ -153,15 +174,6 @@ footer p#copyright {
     margin-right: 8px;
     padding-bottom: 8px;
   }
-
-  #menu h4 {
-    color: #fff;
-    text-transform: uppercase;
-    border-bottom: 1px dotted #fefefe;
-    margin: 2px 0;
-    font-weight: normal;
-    padding: .3em .7em;
-  }
   
   #about h2 {
     border-bottom: 1px solid #efefef;
@@ -173,56 +185,8 @@ footer p#copyright {
 
 @media only screen and (min-width: 480px) {
 
-nav a {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border-radius: none;
-  color: #333;
-}
-
-/*
-  nav a:hover {
-    color: #000;
-    background: #c6f3c0;
-    box-shadow: 0 0 5px rgba(0,0,0,0.4);
-  }
-*/
-
-} /* (min-width: 480px) */
-
-@media only screen and (min-width: 640px) {
-
-html {
-  -webkit-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-}
-
-body {
-  background: #19191b;
-  color: #ccc;
-}
-
-  #info section {
-    width: 50%;
-    float: left;
-  }
-
-  #menu h2 {
-    display: none;
-  }
-  
-  #menu section {
-    float: left;
-    width: 44%;
-    margin: 0 2% 1em 2%;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  }
-  
   nav {
-    margin: .25em 2px;
+    margin: .25em 10px;
     border-top: 1px solid #ccc;
   }
   
@@ -252,18 +216,109 @@ body {
   nav ul li:nth-child(1) {
     border-left: 1px dotted #555;
   }
+
+  nav a {
+    margin: 0;
+    padding: .75em 0;
+    background: none;
+    border-radius: none;
+    color: #333;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+} /* (min-width: 480px) */
+
+@media only screen and (min-width: 640px) {
+
+  html {
+    -webkit-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
+  }
+  
+  body {
+    background: #19191b;
+    color: #ccc;
+  }
+
+  header {
+    background: url(../../css/webchef-logo.png) top right no-repeat, url(../../css/webchef-logo.png) top left no-repeat;
+    background-size: 49px;
+    margin: 0 10px;
+  }
+  
+  header h1 {
+    font-size: 4em;
+    text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
+  }
+  
+  header h1 a, 
+  header h1 a:visited {
+    color: #eee;
+    text-decoration: none;
+  }
+  
+  header h1 a:hover {
+    color: #fff;
+  }
+  
+  #info section {
+    width: 50%;
+    float: left;
+  }
+
+  #menu h2 {
+    display: none;
+  }
+  
+  #menu h4 {
+    color: #fff;
+    border-bottom: 1px dotted #fefefe;
+  }
+  
+  #menu section {
+    float: left;
+    width: 44%;
+    margin: 0 2% 1em 2%;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  
+  nav {
+    margin: .25em 0px;
+    border-top: 1px solid #ccc;
+  }
+  
+  nav ul li {
+    list-style: none;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    border-bottom: 1px dotted #555;
+    border-right: 1px dotted #555;
+  }
+  
+  nav ul li:nth-child(1) {
+    border-left: 1px dotted #555;
+  }
   
   nav a {
     font-weight: bold;
     display: block;
-    color: #6C8C6E;
+    color: #ABBF8F;
     text-align: center;
-    padding: .75em 0;
     text-decoration: none;
   }
   
+  nav a:visited {
+    color: #ABBF8F;
+  }
+  
   nav ul li:hover {
-    background: #6C8C6E;
+    background: #49593F;
   }
   
   nav ul li:hover a {
@@ -275,15 +330,18 @@ body {
 
 @media only screen and (min-width: 960px) {
 
+  header {
+    background-size: 69px;
+  }
+
   #container {
     width: 960px;
     margin: 0 auto;
   }
 
-  header {
-  }
-
   header h1 {
+    font-size: 5em;
+    padding: 0.5em 0 0;
   }
 
   nav {
@@ -293,7 +351,6 @@ body {
 
   #main {
     padding-top: 2em;
-    margin-top: 120px;
   }
 
   #info {
@@ -339,15 +396,14 @@ body {
   }
   
   #about p {
-    width: 46%;
-    margin: 0 2% 1em;
-    float: left;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
   }
   
-  #about p:nth-of-type(2n+1) {
-    clear: left;
-  }
-
 } /* (min-width: 960px) */
 
 
