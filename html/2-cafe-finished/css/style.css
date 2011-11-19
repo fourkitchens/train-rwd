@@ -2,36 +2,66 @@
    Author: Four Kitchens and YOU!
    ========================================================================== */
 
-body {
-  background: #aaa;
+@font-face {
+  font-family: 'CarringtonRegular';
+  src: url('../fonts/Carrington-webfont.eot');
+  src: url('../fonts/Carrington-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Carrington-webfont.woff') format('woff'),
+       url('../fonts/Carrington-webfont.ttf') format('truetype'),
+       url('../fonts/Carrington-webfont.svg#CarringtonRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-div#container {
+body {
+  font-family: "Times New Roman", "Times", serif;
+  line-height: 1.4em;
+}
+
+#container {
   width: 100%;
 }
 
 a {
   color: #66B360;
 }
+
 a:visited {
   color: #86c380;
 }
 
-header,
-footer {
-  background: #66B360;
-  color: #fff;
-  padding: .4em;
+h1 {
+  font-family: 'CarringtonRegular';
 }
-header h1 {
+
+header {
   text-align: center;
 }
-header h1 a,
+
+footer {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #666;
+  color: #eee;
+  text-shadow: 1px 1px 1px #000;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+header h1 a {
+  color: #eee;
+  text-decoration: none;
+}
+
 header h1 a:hover {
   color: #fff;
 }
 
-header nav ul li a {
+nav a {
   display: block;
   margin: 6px;
   padding: 10px 4px;
@@ -43,30 +73,34 @@ header nav ul li a {
   font-weight: 700;
   font-size: 1.2em;
 }
-header nav ul li a:visited {
+
+nav a:hover {
   color: #444;
 }
 
-div#main {
-  margin: 0;
-  padding: 1em;
+#main {
   clear: both;
-  background: #f3f7f3;
+  padding: 1em;
+  min-height: 300px;
+  border-bottom: 1px #555 dotted;
+  margin-bottom: 5px;
 }
 
-div#info {
+#info {
   background: #cdc;
   padding: 0 1em;
 }
-div#info ul {
+
+#info ul {
   margin: 0;
   padding: 0;
 }
-div#info ul li {
+
+#info ul li {
   display: block;
 }
 
-div#about {
+#about {
   clear: both;
 }
 
@@ -80,181 +114,238 @@ footer p#copyright {
 @media only screen and (min-width: 320px) {
 
   header h1 {
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    font-size: 2em;
   }
 
-  div#info {
+  #info {
     border-radius: 5px;
     margin-bottom: 1em;
     box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
     border: 1px solid rgba(0,0,0,0.25);
   }
-  div#info h2 {
+
+  #info h2 {
     margin: .75em 0 .5em;
   }
-  div#info section h3 {
-      margin: 0;
-      padding: 1em 0 .5em;
+
+  #info section h3 {
+    margin: 0;
+    padding: 1em 0 .5em;
   }
 
-  div#menu section {
-    background: #ccc;
+  #menu section {
     margin: 0 .25em 2em;
-    box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
-    border: 1px solid rgba(0,0,0,0.25);
-    border-radius: 5px;
+    border-top: 2px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   }
-  div#menu h3 {
-    background: #73530A;
+
+  #menu h3 {
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: .5em;
     margin: 0;
-    border-radius: 5px 5px 0 0;
+    text-align: center;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
   }
-  div#menu .item {
+
+  #menu .item {
     margin-left: 8px;
     margin-right: 8px;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
   }
-  div#menu h4 {
-    background: #f7f5ee;
-    color: #000;
+
+  #menu h4 {
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px dotted #fefefe;
+    margin: 2px 0;
+    font-weight: normal;
     padding: .3em .7em;
-    margin: .5em -4px .2em -4px;
-    text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
-    border-radius: 2px;
+  }
+  
+  #about h2 {
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
 
 } /* (min-width: 320px) */
 
 @media only screen and (min-width: 480px) {
 
-  header nav ul li a {
-    float: left;
-    width: 29%;
-    box-shadow: 0 0 5px rgba(0,0,0,0.4);
-    -webkit-transition: background .1s ease-in-out;
-    -moz-transition: background .1s ease-in-out;
-    -ms-transition: background .1s ease-in-out;
-    -o-transition: background .1s ease-in-out;
-   transition: background .1s ease-in-out;
-  }
-  header nav ul li a:hover {
+nav a {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: none;
+  color: #333;
+}
+
+/*
+  nav a:hover {
     color: #000;
     background: #c6f3c0;
     box-shadow: 0 0 5px rgba(0,0,0,0.4);
   }
+*/
 
 } /* (min-width: 480px) */
 
 @media only screen and (min-width: 640px) {
 
-  div#info section {
+html {
+  -webkit-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
+}
+
+body {
+  background: #19191b;
+  color: #ccc;
+}
+
+  #info section {
     width: 50%;
     float: left;
   }
 
-  div#menu h2 {
+  #menu h2 {
     display: none;
   }
-  div#menu section {
+  
+  #menu section {
     float: left;
     width: 44%;
     margin: 0 2% 1em 2%;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  
+  nav {
+    margin: .25em 2px;
+    border-top: 1px solid #ccc;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+
+    display: box;
+    box-orient: horizontal;
+  }
+  
+  nav ul li {
+    list-style: none;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    border-bottom: 1px dotted #555;
+    border-right: 1px dotted #555;
+  }
+  
+  nav ul li:nth-child(1) {
+    border-left: 1px dotted #555;
+  }
+  
+  nav a {
+    font-weight: bold;
+    display: block;
+    color: #6C8C6E;
+    text-align: center;
+    padding: .75em 0;
+    text-decoration: none;
+  }
+  
+  nav ul li:hover {
+    background: #6C8C6E;
+  }
+  
+  nav ul li:hover a {
+    color: #eee;
+    text-shadow: 1px 1px 1px #49593F;
   }
 
 } /* (min-width: 768px) */
 
 @media only screen and (min-width: 960px) {
 
-  div#container {
-    width: 960px;
-    margin: 0 auto 10em;
-    border-radius: 7px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
-    border: 2px solid rgba(0,0,0,0.15);
-  }
-  header {
-    padding: .4em 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 120px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    border-bottom: 2px solid rgba(0,0,0,0.15);
-  }
-  header h1 {
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
-
-  header nav {
+  #container {
     width: 960px;
     margin: 0 auto;
   }
-  header nav ul li a {
-    box-shadow: 0 0 9px rgba(0,0,0,0.5);
+
+  header {
   }
 
-  div#main {
+  header h1 {
+  }
+
+  nav {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  #main {
     padding-top: 2em;
     margin-top: 120px;
   }
 
-  div#info {
+  #info {
     max-width: 420px;
     float: right;
     border-radius: 3px;
   }
-  div#info section {
+  
+  #info section {
     width: 100%;
     float: none;
     clear: both;
     padding-bottom: 1em;
   }
-  div#info section h3 {
+  
+  #info section h3 {
     float: left;
     clear: left;
     width: 80px;
     padding: 0;
   }
-  div#info section ul,
-  div#info section address {
+  
+  #info section ul,
+  #info section address {
     margin-left: 80px;
   }
 
-  div#menu section {
+  #menu section {
     width: 270px;
     margin: 0 .75em 2em;
   }
-  div#menu section:nth-child(2n) {
+  
+  #menu section:nth-child(2n) {
     clear: left;
   }
-  div#menu section h3 {
+  
+  #menu section h3 {
     margin-top: 0;
   }
 
-  div#about {
+  #about {
     clear: both;
   }
-  div#about p {
+  
+  #about p {
     width: 46%;
     margin: 0 2% 1em;
     float: left;
   }
-  div#about p:nth-of-type(2n+1) {
+  
+  #about p:nth-of-type(2n+1) {
     clear: left;
-  }
-
-  footer {
-    margin: 0 -2px;
-    border: 2px solid rgba(0,0,0,0.1);
-    border-top: 0;
-    border-radius: 0 0 7px 7px;
   }
 
 } /* (min-width: 960px) */
