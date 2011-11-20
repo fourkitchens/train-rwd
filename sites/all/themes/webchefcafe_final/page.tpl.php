@@ -68,22 +68,16 @@
 ?>
 
   <div id="page-wrapper"><div id="page">
-
-    <div id="header"><div class="section clearfix">
-
-      <div id="name-and-slogan">
-        Web Chef Café (finished theme)
-      </div> <!-- /#name-and-slogan -->
-
-      <div id="navigation"><div class="section">
-        <ul id="main-menu-links" class="links inline clearfix">
+    <header>
+      <h1><a href="/html/2-food-built">Web Chef Caf&#233;</a></h1>
+      <nav class="clearfix">
+        <ul>
           <li><a href="#info">Location</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#about">About</a></li>
         </ul>
-      </div></div> <!-- /.section, /#navigation -->
-
-    </div></div> <!-- /.section, /#header -->
+      </nav>
+    </header>
 
     <?php print $messages; ?>
 
