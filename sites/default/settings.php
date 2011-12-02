@@ -176,22 +176,10 @@
  *     'database' => '/path/to/databasefilename',
  *   );
  * @endcode
+ *
+ * See bottom of file for environment-specific database settings.
  */
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'mt_trainingwheels',
-      'username' => 'el_mt_d',
-      'password' => '',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
+$databases = array ();
 
 /**
  * Access control for update.php script.
@@ -457,3 +445,18 @@ $conf['reverse_proxy_addresses'] = array('127.0.0.1');
  */
 # $conf['allow_authorize_operations'] = FALSE;
 
+/**
+ * Environment specific settings.
+ */
+if (preg_match('/^train-rwd.webchefs.org(:\d+)?$/', $_SERVER['HTTP_HOST'])) {
+  // Stage.
+  include_once 'sites/default/settings.stage.php';
+}
+else {
+  $matches = array();
+  if (preg_match('/^(.+)\..+\.webchefs\.org(:\d+)?$/', $_SERVER['HTTP_HOST'], $matches) &&
+    file_exists('sites/default/' . $matches[1] . '.settings.php')
+  ) {
+    include_once 'sites/default/' . $matches[1] . '.settings.php';
+  }
+}
