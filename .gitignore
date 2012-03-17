@@ -1,7 +1,6 @@
-# Ignore settings files that could have database passwords.
-sites/*/settings.*.php
-sites/*/*.settings.php
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
 
-# Ignore files directories.
-sites/*/files/color
+# Ignore paths that contain user-generated content.
+sites/*/files
 sites/*/private

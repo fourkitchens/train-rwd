@@ -176,10 +176,22 @@
  *     'database' => '/path/to/databasefilename',
  *   );
  * @endcode
- *
- * See bottom of file for environment-specific database settings.
  */
-$databases = array ();
+$databases = array (
+  'default' => 
+  array (
+    'default' => 
+    array (
+      'database' => 'train_rwd_denver',
+      'username' => 'root',
+      'password' => 'thr0waway',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
 
 /**
  * Access control for update.php script.
@@ -211,7 +223,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';
+$drupal_hash_salt = 'uCKd0SsdrbBOFKLjoalwktbgKZHLvxxl22aB2aQQx2c';
 
 /**
  * Base URL (optional).
@@ -336,7 +348,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * about this setting, do not have a reverse proxy, or Drupal operates in
  * a shared hosting environment, this setting should remain commented out.
  */
-$conf['reverse_proxy'] = TRUE;
+# $conf['reverse_proxy'] = TRUE;
 
 /**
  * Set this value if your proxy server sends the client IP in a header other
@@ -357,7 +369,7 @@ $conf['reverse_proxy'] = TRUE;
  * reverse proxies. Otherwise, the client could directly connect to
  * your web server spoofing the X-Forwarded-For headers.
  */
-$conf['reverse_proxy_addresses'] = array('127.0.0.1');
+# $conf['reverse_proxy_addresses'] = array('a.b.c.d', ...);
 
 /**
  * Page caching:
@@ -444,19 +456,3 @@ $conf['reverse_proxy_addresses'] = array('127.0.0.1');
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
-
-/**
- * Environment specific settings.
- */
-if (preg_match('/^train-rwd.webchefs.org(:\d+)?$/', $_SERVER['HTTP_HOST'])) {
-  // Stage.
-  include_once 'sites/default/settings.stage.php';
-}
-else {
-  $matches = array();
-  if (preg_match('/^(.+)\..+\.webchefs\.org(:\d+)?$/', $_SERVER['HTTP_HOST'], $matches) &&
-    file_exists('sites/default/' . $matches[1] . '.settings.php')
-  ) {
-    include_once 'sites/default/' . $matches[1] . '.settings.php';
-  }
-}
