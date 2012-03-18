@@ -23,8 +23,8 @@ stylesheets[all][] = foad/system.menus.css
 ; Don't combine <link> attribute-based media queries with @media inside a stylesheet
 ;
 
-stylesheets[all][]   = css/h5bp.css
-stylesheets[all][]   = css/style.css
+stylesheets[all][] = css/h5bp.css
+stylesheets[all][] = css/style.css
 stylesheets[print][] = css/print.css
 
 ;
