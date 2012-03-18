@@ -1,6 +1,14 @@
-/* ==|== primary styles =====================================================
-   Author: Four Kitchens and YOU!
-   ========================================================================== */
+/**
+ *
+ * This stylesheet is broken into several chunks.
+ *
+ * - The first is normal. The styles will always apply (unless overridden by a later rule, of course).
+ * - The remaining chunks are enclosed by media queries. They will not apply to the document unless
+ *   the query evals to TRUE.
+ * - Since this is an example of "mobile-first" media queries, you'll notice the styles proceed from
+ *   the regular, unconditional styles up to the largest resolution, which is 960px in this case.
+ *
+ **/
 
 @font-face {
   font-family: 'CarringtonRegular';
@@ -14,7 +22,7 @@
 }
 
 body {
-  font-family: "Times New Roman", "Times", serif;
+  font-family: helvetica, sans-serif;
   line-height: 1.4em;
 }
 
@@ -32,13 +40,12 @@ h1 {
 }
 
 header {
-  text-align: center;
-  background: url(../../css/webchef-logo.png) top left no-repeat, url(../../css/webchef-logo.png) top right no-repeat;
-  background-size: 30px;
+  padding-top: 50px;
+  background: #e69a23 url(../../css/webchef-logo-sm.png) 50% 8px no-repeat;
 }
 
 header h1 {
-  line-height: 1em;
+  visibility: hidden;
 }
 
 header h1 a, 
@@ -48,7 +55,6 @@ header h1 a:visited {
 }
 
 header h1 a:hover {
-  color: #333;
 }
 
 nav a {
@@ -56,20 +62,20 @@ nav a {
   margin: 6px;
   padding: 10px 4px;
   background: #fff;
-  border-radius: 5px;
   text-align: center;
   color: #333;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2em;
-  border: 1px solid #555;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
 }
 
 nav a:hover {
-  color: #444;
+  color: inherit;
 }
 
 #menu h4 {
@@ -114,12 +120,10 @@ footer {
   background: #222;
   color: #eee;
   text-shadow: 1px 1px 1px #000;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+     -moz-border-radius-bottomright: 3px;
+     -moz-border-radius-bottomleft: 3px;
+          border-radius: 0 0 3px 3px;
 }
 
 footer p#copyright {
@@ -127,12 +131,20 @@ footer p#copyright {
 }
 
 
-/* ==|== media queries ====================================================== */
+/**
+ *
+ * Media Queries are below. These styles will only apply if the media query
+ * enclosing the styles evaluates to TRUE at the present moment.
+ *
+ **/
 
+/*
+ * This media query means "visual, pixel-based screens which are at least 320px wide"
+ */
 @media only screen and (min-width: 320px) {
 
   header {
-    margin: 0 10px;
+    margin: 0;
   }
 
   header h1 {
@@ -183,71 +195,51 @@ footer p#copyright {
 
 } /* (min-width: 320px) */
 
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 480px wide"
+ */
 @media only screen and (min-width: 480px) {
 
   nav {
-    margin: .25em 10px;
-    border-top: 1px solid #ccc;
+    margin-left: 5%
   }
   
   nav ul {
-    margin: 0;
-    padding: 0;
-
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-
-    display: -moz-box;
-    -moz-box-orient: horizontal;
-
-    display: box;
-    box-orient: horizontal;
   }
   
   nav ul li {
-    list-style: none;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    border-bottom: 1px dotted #555;
-    border-right: 1px dotted #555;
-  }
-  
-  nav ul li:nth-child(1) {
-    border-left: 1px dotted #555;
   }
 
-  nav a {
-    margin: 0;
-    padding: .75em 0;
-    background: none;
-    border-radius: none;
-    color: #333;
+  nav ul li a {
+    width: 28%;
+    float: left;
+    margin-bottom: 0;
     border: none;
+    -webkit-border-radius: 10px 10px 0 0;
+       -moz-border-radius-bottomright: 0;
+       -moz-border-radius-bottomleft: 0;
+            border-radius: 10px 10px 0 0;
     -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
   }
 
 } /* (min-width: 480px) */
 
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 640px wide"
+ */
 @media only screen and (min-width: 640px) {
 
   html {
-    -webkit-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
   }
   
   body {
-    background: #19191b;
-    color: #ccc;
   }
 
   header {
-    background: url(../../css/webchef-logo.png) top right no-repeat, url(../../css/webchef-logo.png) top left no-repeat;
-    background-size: 49px;
-    margin: 0 10px;
   }
   
   header h1 {
@@ -262,7 +254,6 @@ footer p#copyright {
   }
   
   header h1 a:hover {
-    color: #fff;
   }
   
   #info section {
@@ -275,7 +266,6 @@ footer p#copyright {
   }
   
   #menu h4 {
-    color: #fff;
     border-bottom: 1px dotted #fefefe;
   }
   
@@ -288,55 +278,39 @@ footer p#copyright {
   }
   
   nav {
-    margin: .25em 0px;
-    border-top: 1px solid #ccc;
   }
   
   nav ul li {
-    list-style: none;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    border-bottom: 1px dotted #555;
-    border-right: 1px dotted #555;
   }
   
   nav ul li:nth-child(1) {
-    border-left: 1px dotted #555;
   }
   
   nav a {
-    font-weight: bold;
-    display: block;
-    color: #ABBF8F;
-    text-align: center;
-    text-decoration: none;
   }
   
   nav a:visited {
-    color: #ABBF8F;
   }
   
   nav ul li:hover {
-    background: #49593F;
   }
   
   nav ul li:hover a {
-    color: #eee;
-    text-shadow: 1px 1px 1px #49593F;
   }
 
-} /* (min-width: 768px) */
+} /* (min-width: 640px) */
 
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 960px wide"
+ */
 @media only screen and (min-width: 960px) {
 
   header {
-    background-size: 69px;
+    background: #e69a23 url(../../css/webchef-logo.png) 10px top no-repeat;
   }
 
   #container {
-    width: 960px;
-    margin: 0 auto;
   }
 
   header h1 {
@@ -346,7 +320,7 @@ footer p#copyright {
 
   nav {
     width: 960px;
-    margin: 0 auto;
+    margin: 0 auto 0 50px;
   }
 
   #main {
@@ -395,7 +369,8 @@ footer p#copyright {
     clear: both;
   }
   
-  #about p {
+  /* This .csscolumns class is a Modernizr class, found in <html> */
+  .csscolumns #about p {
     -moz-column-count: 2;
     -moz-column-gap: 20px;
     -webkit-column-count: 2;
