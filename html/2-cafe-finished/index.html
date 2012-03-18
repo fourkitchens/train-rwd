@@ -1,7 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if lte IE 8]>     <html class="no-js oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <!--
@@ -12,7 +10,9 @@ We filled in some minor details, but feel free to change any of them.
 Some guidelines to speed things along:
 
 - Build a one-page site. This will make the responsive stuff more obvious
-- Don't worry about any jQuery or stuff.
+- Don't worry about any jQuery or other fancy stuff for now.
+
+<3z from the Web Chefs :)
 
 -->
 
@@ -21,8 +21,8 @@ Some guidelines to speed things along:
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Web Chef Caf&#233;</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="A one-pager for the Web Chef Cafe. Delicious responsive website goodness.">
+  <meta name="author" content="YOU!">
 
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,target-densityDpi=device-dpi">
 
@@ -30,7 +30,12 @@ Some guidelines to speed things along:
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css" media="print">
 
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+  <!--
+    The only JS that should live in the <head> is code that is primarily presentational.
+    Modernizr, Respond.js, and TypeKit should all live in the <head>, but you should
+    ALWAYS put them after your CSS.
+  -->
+  <script src="js/libs/modernizr-2.5.3.js"></script>
 </head>
 
 <body>
@@ -143,7 +148,17 @@ Some guidelines to speed things along:
     <footer>
       <p id="copyright">&#169; 2012 Web Chef Caf&#233;. No rights reserved.</p>
     </footer>
-  </div> <!--! end of #container -->
-  
+  </div> <!-- #container -->
+
+  <!--
+    Put all your DOMready scripts after the jQuery request below.
+    If you aren't sure if your script requires DOMready, just put it down below.
+
+    Further reading: http://developer.yahoo.com/performance/rules.html#js_bottom
+  -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
 </body>
 </html>
