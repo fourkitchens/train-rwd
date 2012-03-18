@@ -7,7 +7,6 @@ html, body {
 }
 
 html {
-  height: 100%;
   -webkit-box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 0px 55px 0px rgba(0, 0, 0, 0.2);
@@ -20,7 +19,6 @@ html {
 
 header {
   border-bottom: 2px solid #333;
-  background: url('webchef-logo.png') top center no-repeat;
   color: #ccc;
   position: relative;
 }
@@ -33,16 +31,6 @@ header h1 {
   font-weight: normal;
 }
 
-header h1::before {
-  content: '';
-  display: inline-block;
-  width: 42px;
-  height: 34px;
-  margin-right: 5px;
-  margin-bottom: -5px;
-  background: url(../../css/webchef-logo.png) -45px -116px no-repeat;
-}
-
 h2 {
   font-size: 2em;
   border-bottom: 1px solid #ccc;
@@ -50,47 +38,32 @@ h2 {
 }
 
 nav {
-  margin: .25em 2px;
+  margin: 0;
   border-top: 1px solid #ccc;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
-  
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-
-  display: box;
-  box-orient: horizontal;
 }
 
 nav ul li {
   list-style: none;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  border-bottom: 1px dotted #555;
-  border-right: 1px dotted #555;
 }
 
-nav ul li:nth-child(1) {
-  border-left: 1px dotted #555;
-}
-
-nav a {
-  font-weight: bold;
+nav a,
+nav a:visited {
   display: block;
+  float: left;
+  width: 33.335%; /* round up to simulate infinite decimal repeater */
+  font-weight: bold;
   color: #6C8C6E;
   text-align: center;
   padding: .75em 0;
   text-decoration: none;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
   background: #6c8c6e;
 }
 
@@ -160,7 +133,7 @@ div.bio-info dl dd {
 }
 
 img.thumbnail {
-  width: 100px;
+  width: 140px;
 }
 img.floatleft {
   float: left;
@@ -173,16 +146,17 @@ img.floatright {
 
 footer {
   display: block;
+  margin-bottom: 2em;
   padding: 1em;
   background: #666;
   color: #eee;
   text-shadow: 1px 1px 1px #000;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 /* ==|== media queries ====================================================== */
