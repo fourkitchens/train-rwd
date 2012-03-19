@@ -6,20 +6,9 @@
  * - The remaining chunks are enclosed by media queries. They will not apply to the document unless
  *   the query evals to TRUE.
  * - Since this is an example of "mobile-first" media queries, you'll notice the styles proceed from
- *   the regular, unconditional styles up to the largest resolution, which is 960px in this case.
+ *   the regular, unconditional styles up to the largest resolution, which is 1290px in this case.
  *
  **/
-
-@font-face {
-  font-family: 'CarringtonRegular';
-  src: url('../fonts/Carrington-webfont.eot');
-  src: url('../fonts/Carrington-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/Carrington-webfont.woff') format('woff'),
-       url('../fonts/Carrington-webfont.ttf') format('truetype'),
-       url('../fonts/Carrington-webfont.svg#CarringtonRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 
 body {
   font-family: helvetica, sans-serif;
@@ -33,10 +22,6 @@ body {
 a, 
 a:visited {
   color: #66B360;
-}
-
-h1 {
-  font-family: 'CarringtonRegular';
 }
 
 h2 {
@@ -442,6 +427,9 @@ footer p#copyright {
 } /* (min-width: 960px) */
 
 
+/*
+ * This media query means "visual, pixel-based screens which are at least 1290px wide"
+ */
 @media only screen and (min-width: 1290px) {
 
   nav {
@@ -457,13 +445,4 @@ footer p#copyright {
     margin-top: 0;
   }
 
-}
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
+} /* (min-width: 1290px) */
