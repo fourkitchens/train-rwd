@@ -1,40 +1,52 @@
-/* ==|== Drupal styles ======================================================
-   Author: Four Kitchens and YOU!
-   ========================================================================== */
+/**
+ * These styles will always apply (unless overridden by a later rule, of course).
+ **/
 
 body {
-  font-family: "Times New Roman", "Times", serif;
+  font-family: helvetica, sans-serif;
   line-height: 1.4em;
 }
 
-#page-wrapper {
+#container {
   width: 100%;
 }
 
-a,
+a, 
 a:visited {
   color: #66B360;
 }
 
-/*
- * This is not a great idea unless you have a one-page website like our example!!!
- */
-#page-title {
-  display: none;
+h2 {
+  font-family: Georgia;
+}
+
+header {
+  padding-top: 50px;
+  background: #e69a23 url(../img/webchef-logo-sm.png) 50% 8px no-repeat;
 }
 
 header h1 {
-  line-height: 1em;
+  visibility: hidden;
 }
 
-header h1 a,
+header h1 a, 
 header h1 a:visited {
   color: #555;
   text-decoration: none;
 }
 
-header h1 a:hover {
-  color: #333;
+/* this is ok for our one-pager, but not in a normal Drupal scenario */
+#page-title,
+div.tabs {
+  display: none;
+}
+
+#tagline {
+  float: right;
+  margin: -90px 20px 0;
+  font-size: 24px;
+  font-family: Georgia;
+  color: #FFF;
 }
 
 nav a {
@@ -42,29 +54,27 @@ nav a {
   margin: 6px;
   padding: 10px 4px;
   background: #fff;
-  border-radius: 5px;
   text-align: center;
   color: #333;
   text-decoration: none;
   font-weight: 700;
   font-size: 1.2em;
-  border: 1px solid #555;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.6);
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
 }
 
 nav a:hover {
-  color: #444;
+  color: inherit;
 }
-
 
 #menu h4 {
   color: rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
   border-bottom: 1px dotted #555;
   margin: 2px 0;
-  font-weight: normal;
   padding: .3em .7em;
 }
 
@@ -76,40 +86,43 @@ nav a:hover {
   margin-bottom: 5px;
 }
 
-div#block-block-4 {
-  background: #49593F;
+#block-block-4 {
+  background: #66B360;
   padding: 0 1em;
-  color: #ABBF8F;
+  color: #FFF;
 }
-div#block-block-4 ul {
+
+#block-block-4 ul {
   margin: 0;
   padding: 0;
 }
-div#block-block-4 ul li {
+
+#block-block-4 ul li {
   display: block;
 }
 
-div#block-block-3 {
+#about {
   clear: both;
 }
 
-footer {
+.drinks h3,
+.entrees h3,
+.desserts h3 {
+  font-size: 18px;
+}
+
+div#footer {
   padding: 1em;
   margin-bottom: 1em;
   background: #222;
   color: #eee;
   text-shadow: 1px 1px 1px #000;
-  -webkit-border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+     -moz-border-radius-bottomright: 3px;
+     -moz-border-radius-bottomleft: 3px;
+          border-radius: 0 0 3px 3px;
 }
 
-#footer p#copyright {
+div#footer p#copyright {
   padding-left: 1em;
-}
-#footer a {
-  color: #fff;
 }

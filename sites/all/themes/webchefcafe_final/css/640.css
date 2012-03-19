@@ -1,18 +1,10 @@
 html {
-  -webkit-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0px 0px 55px 0px rgba(255, 255, 255, 0.2);
 }
 
 body {
-  background: #19191b;
-  color: #ccc;
 }
 
 header {
-  text-align: center;
-  background: url(../img/webchef-logo.png) top left no-repeat, url(../img/webchef-logo.png) top right no-repeat;
-  background-size: 30px;
 }
 
 header h1 {
@@ -27,22 +19,22 @@ header h1 a:visited {
 }
 
 header h1 a:hover {
-  color: #fff;
 }
 
-div#block-block-4 section {
+#block-block-4 section {
   width: 50%;
   float: left;
 }
 
-div#menu h2 {
+#menu h2 {
   display: none;
 }
-div#menu h4 {
-  color: #fff;
+
+#menu h4 {
   border-bottom: 1px dotted #fefefe;
 }
-div#menu section {
+
+#menu section {
   float: left;
   width: 44%;
   margin: 0 2% 1em 2%;
@@ -50,41 +42,34 @@ div#menu section {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+#sidebar-bread {
+  float: left;
+  display: block;
+  margin: 0 2% 1em 2%;
+}
+
+#sidebar-bread img,
+#sidebar-soup img {
+  width: 280px;
+}
+
 nav {
-  margin: .25em 0px;
-  border-top: 1px solid #999;
 }
 
 nav ul li {
-  list-style: none;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  border-bottom: 1px dotted #555;
-  border-right: 1px dotted #555;
 }
 
 nav ul li:nth-child(1) {
-  border-left: 1px dotted #555;
 }
 
 nav a {
-  font-weight: bold;
-  display: block;
-  color: #ABBF8F;
-  text-align: center;
-  text-decoration: none;
 }
 
 nav a:visited {
-  color: #ABBF8F;
 }
 
 nav ul li:hover {
-  background: #49593F;
 }
 
 nav ul li:hover a {
-  color: #eee;
-  text-shadow: 1px 1px 1px #49593F;
 }

@@ -1,43 +1,23 @@
 nav {
-  margin: .25em 10px;
-  border-top: 1px solid #ccc;
+  margin-left: 5%
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
-
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-
-  display: box;
-  box-orient: horizontal;
 }
 
 nav ul li {
-  list-style: none;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  border-bottom: 1px dotted #555;
-  border-right: 1px dotted #555;
 }
 
-nav ul li:nth-child(1) {
-  border-left: 1px dotted #555;
-}
-
-nav a {
-  margin: 0;
-  padding: .75em 0;
-  background: none;
-  border-radius: none;
-  color: #333;
+nav ul li a {
+  width: 28%;
+  float: left;
+  margin-bottom: 0;
   border: none;
+  -webkit-border-radius: 10px 10px 0 0;
+     -moz-border-radius-bottomright: 0;
+     -moz-border-radius-bottomleft: 0;
+          border-radius: 10px 10px 0 0;
   -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
 }
