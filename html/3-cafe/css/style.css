@@ -361,7 +361,7 @@ footer p#copyright {
 
   nav {
     width: 960px;
-    margin: 0 auto 0 50px;
+    margin: 0 0 0 50px;
   }
 
   #main {
@@ -418,6 +418,7 @@ footer p#copyright {
   
   #menu section:nth-child(2n) {
     clear: left;
+    margin-left: 0;
   }
   
   #menu section h3 {
@@ -440,6 +441,23 @@ footer p#copyright {
   
 } /* (min-width: 960px) */
 
+
+@media only screen and (min-width: 1290px) {
+
+  nav {
+    margin-left: 50px;
+  }
+
+  #menu section:nth-child(2n) {
+    clear: none;
+    margin-left: 2%;
+  }
+
+  #sidebar-bread {
+    margin-top: 0;
+  }
+
+}
 
 @-webkit-keyframes spin {
   from {
