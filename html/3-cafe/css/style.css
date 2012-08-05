@@ -30,7 +30,7 @@ h2 {
 
 header {
   padding-top: 50px;
-  background: #e69a23 url(../../css/webchef-logo-sm.png) 50% 8px no-repeat;
+  background: #e69a23 url(../css/webchef-logo-sm.png) 50% 8px no-repeat;
 }
 
 header h1 {
@@ -133,12 +133,19 @@ footer p#copyright {
 }
 
 
+
+
+
 /**
  *
  * Media Queries are below. These styles will only apply if the media query
  * enclosing the styles evaluates to TRUE at the present moment.
  *
  **/
+
+
+
+
 
 /*
  * This media query means "visual, pixel-based screens which are at least 320px wide"
@@ -207,6 +214,10 @@ footer p#copyright {
 } /* (min-width: 320px) */
 
 
+
+
+
+
 /*
  * This media query means "visual, pixel-based screens which are at least 480px wide"
  */
@@ -237,6 +248,10 @@ footer p#copyright {
   }
 
 } /* (min-width: 480px) */
+
+
+
+
 
 
 /*
@@ -321,6 +336,9 @@ footer p#copyright {
   }
 
 } /* (min-width: 640px) */
+
+
+
 
 
 /*
@@ -425,6 +443,9 @@ footer p#copyright {
   }
   
 } /* (min-width: 960px) */
+
+
+
 
 
 /*
