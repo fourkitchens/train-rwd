@@ -12,6 +12,8 @@
  * - $created: Formatted date and time for when the comment was created.
  *   Preprocess functions can reformat it by calling format_date() with the
  *   desired parameters on the $comment->created variable.
+ * - $pubdate: Formatted date and time for when the comment was created wrapped
+ *   in a HTML5 time element.
  * - $changed: Formatted date and time for when the comment was last changed.
  *   Preprocess functions can reformat it by calling format_date() with the
  *   desired parameters on the $comment->changed variable.
@@ -61,43 +63,44 @@
  * @see theme_comment()
  */
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print $picture; ?>
+<article class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <h3<?php print $title_attributes; ?>>
-      <?php print $title; ?>
-      <?php if ($new): ?>
-        <span class="new"><?php print $new; ?></span>
-      <?php endif; ?>
-    </h3>
-  <?php elseif ($new): ?>
-    <div class="new"><?php print $new; ?></div>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
+  <header>
+    <p class="submitted">
+      <?php print $picture; ?>
+      <?php print $submitted; ?>
+      <?php print $permalink; ?>
+    </p>
 
-  <?php if ($status == 'comment-unpublished'): ?>
-    <div class="unpublished"><?php print t('Unpublished'); ?></div>
-  <?php endif; ?>
-
-  <div class="submitted">
-    <?php print $permalink; ?>
-    <?php print $submitted; ?>
-  </div>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['links']);
-      print render($content);
-    ?>
-    <?php if ($signature): ?>
-      <div class="user-signature clearfix">
-        <?php print $signature; ?>
-      </div>
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?>
+      <h3<?php print $title_attributes; ?>>
+        <?php print $title; ?>
+        <?php if ($new): ?>
+          <mark class="new"><?php print $new; ?></mark>
+        <?php endif; ?>
+      </h3>
+    <?php elseif ($new): ?>
+      <mark class="new"><?php print $new; ?></mark>
     <?php endif; ?>
-  </div>
+    <?php print render($title_suffix); ?>
+
+    <?php if ($status == 'comment-unpublished'): ?>
+      <p class="unpublished"><?php print t('Unpublished'); ?></p>
+    <?php endif; ?>
+  </header>
+
+  <?php
+    // We hide the comments and links now so that we can render them later.
+    hide($content['links']);
+    print render($content);
+  ?>
+
+  <?php if ($signature): ?>
+    <footer class="user-signature clearfix">
+      <?php print $signature; ?>
+    </footer>
+  <?php endif; ?>
 
   <?php print render($content['links']) ?>
-</div><!-- /.comment -->
+</article><!-- /.comment -->

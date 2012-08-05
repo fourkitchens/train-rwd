@@ -33,11 +33,11 @@
  * - modules/help/help.css  (and help-rtl.css)
  * - modules/image/image.admin.css
  * - modules/image/image.css  (and image-rtl.css)
- * - modules/locale/locale.css
+ * - modules/locale/locale.css  (and locale-rtl.css)
  * - modules/menu/menu.css
- * - modules/node/node.css  (and node-rtl.css)
+ * - modules/node/node.css
  * - modules/openid/openid.css  (and openid-rtl.css)
- * - modules/overlay/overlay-child.css
+ * - modules/overlay/overlay-child.css  (and overlay-child-rtl.css)
  * - modules/overlay/overlay-parent.css
  * - modules/poll/poll.css  (and poll-rtl.css)
  * - modules/profile/profile.css
@@ -57,15 +57,6 @@
  * - modules/update/update.css  (and update-rtl.css)
  * - modules/user/user.css  (and user-rtl.css)
  */
-
-
-/*
- * modules/aggregator/aggregator-rtl.css
- */
-
-#aggregator .feed-source .feed-icon {
-  float: left;
-}
 
 
 /*
@@ -112,6 +103,15 @@
 
 
 /*
+ * modules/aggregator/aggregator-rtl.css
+ */
+
+#aggregator .feed-source .feed-icon {
+  float: left;
+}
+
+
+/*
  * modules/block/block.css
  */
 
@@ -149,22 +149,6 @@ a.block-demo-backlink:visited {
 }
 a.block-demo-backlink:hover {
   text-decoration: underline;
-}
-
-
-/*
- * modules/book/book-rtl.css
- */
-
-.book-navigation .menu {
-  padding: 1em 3em 0 0;
-}
-
-.book-navigation .page-previous {
-  float: right;
-}
-.book-navigation .page-up {
-  float: right;
 }
 
 
@@ -228,56 +212,28 @@ html.js #edit-book-pick-book {
 
 
 /*
- * modules/color/color-rtl.css
+ * modules/book/book-rtl.css
  */
 
-#placeholder {
-  left: 0;
-  right: auto;
+.book-navigation .menu {
+  padding: 1em 3em 0 0;
 }
 
-/* Palette */
-.color-form .form-item {
-  padding-left: 0;
-  padding-right: 1em;
-}
-.color-form label {
-  float: right;
-  clear: right;
-}
-.color-form .form-text,
-.color-form .form-select {
+.book-navigation .page-previous {
   float: right;
 }
-.color-form .form-text {
-  margin-right: 0;
-  margin-left: 5px;
-}
-#palette .hook {
-  float: right;
-}
-#palette .down,
-#palette .up,
-#palette .both {
-  background: url(images/hook-rtl.png) no-repeat 0 0;
-}
-#palette .up {
-  background-position: 0 -27px;
-}
-#palette .both {
-  background-position: 0 -54px;
-}
-#palette .lock {
-  float: right;
-  right: -10px;
-}
-html.js #preview {
+.book-navigation .page-up {
   float: right;
 }
 
 
 /*
  * modules/color/color.css
+ */
+
+/**
+ * @file
+ * Stylesheet for the administration pages of the Color module.
  */
 
 /* Farbtastic placement */
@@ -363,12 +319,56 @@ html.js #preview {
 
 
 /*
- * modules/comment/comment-rtl.css
+ * modules/color/color-rtl.css
  */
 
-.indented {
-  margin-left: 0;
-  margin-right: 25px;
+/**
+ * @file
+ * Right-to-left specific stylesheet for the Color module.
+ */
+
+#placeholder {
+  left: 0;
+  right: auto;
+}
+
+/* Palette */
+.color-form .form-item {
+  padding-left: 0;
+  padding-right: 1em;
+}
+.color-form label {
+  float: right;
+  clear: right;
+}
+.color-form .form-text,
+.color-form .form-select {
+  float: right;
+}
+.color-form .form-text {
+  margin-right: 0;
+  margin-left: 5px;
+}
+#palette .hook {
+  float: right;
+}
+#palette .down,
+#palette .up,
+#palette .both {
+  background: url(images/hook-rtl.png) no-repeat 0 0;
+}
+#palette .up {
+  background-position: 0 -27px;
+}
+#palette .both {
+  background-position: 0 -54px;
+}
+#palette .lock {
+  float: right;
+  right: -10px;
+}
+html.js #preview {
+  float: right;
 }
 
 
@@ -385,34 +385,28 @@ html.js #preview {
 .comment-unpublished {
   background-color: #fff4f4;
 }
-.preview .comment {
+.comment-preview {
   background-color: #ffffea;
 }
 
 
 /*
- * modules/contextual/contextual-rtl.css
+ * modules/comment/comment-rtl.css
  */
 
-div.contextual-links-wrapper {
-  left: 5px;
-  right: auto;
-}
-div.contextual-links-wrapper ul.contextual-links {
-  -moz-border-radius: 0 4px 4px 4px;
-  -webkit-border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 4px;
-  border-radius: 0 4px 4px 4px;
-  left: 0;
-  right: auto;
-}
-a.contextual-links-trigger {
-  text-indent: -90px;
+.indented {
+  margin-left: 0;
+  margin-right: 25px;
 }
 
 
 /*
  * modules/contextual/contextual.css
+ */
+
+/**
+ * @file
+ * Stylesheet for the Contextual module.
  */
 
 /**
@@ -461,7 +455,6 @@ div.contextual-links-active a.contextual-links-trigger {
   background-position: 2px -18px;
 }
 div.contextual-links-active a.contextual-links-trigger {
-  background-position: 2px -18px;
   background-color: #fff;
   border-color: #ccc;
   border-bottom: none;
@@ -517,7 +510,38 @@ ul.contextual-links li a:hover {
 
 
 /*
+ * modules/contextual/contextual-rtl.css
+ */
+
+/**
+ * @file
+ * Stylesheet specific to right-to-left languages.
+ */
+
+div.contextual-links-wrapper {
+  left: 5px;
+  right: auto;
+}
+div.contextual-links-wrapper ul.contextual-links {
+  -moz-border-radius: 0 4px 4px 4px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 4px;
+  border-radius: 0 4px 4px 4px;
+  left: 0;
+  right: auto;
+}
+a.contextual-links-trigger {
+  text-indent: -90px;
+}
+
+
+/*
  * modules/dashboard/dashboard.css
+ */
+
+/**
+ * @file
+ * Stylesheet for the Dashboard module.
  */
 
 #dashboard div.dashboard-region {
@@ -527,7 +551,7 @@ ul.contextual-links li a:hover {
 
 #dashboard div#dashboard_main {
   width: 65%;
-  margin-right: 1%;
+  margin-right: 1%; /* LTR */
 }
 
 #dashboard div#dashboard_sidebar {
@@ -549,9 +573,9 @@ ul.contextual-links li a:hover {
 #dashboard #disabled-blocks .block,
 #dashboard .block-placeholder {
   background: #e2e1dc;
-  padding: 6px 4px 6px 8px;
-  margin: 3px 3px 3px 0;
-  float: left;
+  padding: 6px 4px 6px 8px; /* LTR */
+  margin: 3px 3px 3px 0; /* LTR */
+  float: left; /* LTR */
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -577,7 +601,7 @@ ul.contextual-links li a:hover {
 }
 
 #dashboard .canvas-content a.button {
-  margin: 0 0 0 10px;
+  margin: 0 0 0 10px; /* LTR */
   color: #5a5a5a;
   text-decoration: none;
 }
@@ -652,14 +676,38 @@ ul.contextual-links li a:hover {
 
 
 /*
- * modules/dblog/dblog-rtl.css
+ * modules/dashboard/dashboard-rtl.css
  */
 
-.form-item-type,
-.form-item-severity {
+/**
+ * @file
+ * Right-to-left specific stylesheet for the Dashboard module.
+ */
+
+#dashboard div.dashboard-region {
   float: right;
-  padding-right: 0;
-  padding-left: .8em;
+}
+#dashboard #disabled-blocks .block, #dashboard .block-placeholder {
+  float: right;
+  margin: 3px 0 3px 3px;
+  padding: 6px 8px 6px 4px;
+}
+#dashboard .canvas-content a.button {
+  margin: 0 10px 0 0;
+}
+#dashboard .ui-sortable .block h2 {
+  background-position: right -39px;
+  padding: 0 19px;
+}
+#dashboard.customize-inactive #disabled-blocks .block:hover h2 {
+  background-position: right -39px;
+}
+#dashboard.customize-inactive .dashboard-region .ui-sortable .block:hover h2 {
+  background-position: right -36px;
+}
+#dashboard div#dashboard_main {
+  margin-left: 1%;
+  margin-right: 0;
 }
 
 
@@ -720,27 +768,23 @@ table#admin-dblog td.icon {
 table#admin-dblog tr.dblog-warning td.icon {
   background-image: url(../../misc/message-16-warning.png);
 }
-table#admin-dblog tr.dblog-error td.icon {
+table#admin-dblog tr.dblog-error td.icon,
+table#admin-dblog tr.dblog-critical td.icon,
+table#admin-dblog tr.dblog-alert td.icon,
+table#admin-dblog tr.dblog-emerg td.icon {
   background-image: url(../../misc/message-16-error.png);
 }
 
 
 /*
- * modules/field/theme/field-rtl.css
+ * modules/dblog/dblog-rtl.css
  */
 
-form .field-multiple-table th.field-label {
-  padding-right: 0;
-}
-form .field-multiple-table td.field-multiple-drag {
-  padding-left: 0;
-}
-form .field-multiple-table td.field-multiple-drag a.tabledrag-handle{
-  padding-left: .5em;
-}
-.field-label-inline .field-label,
-.field-label-inline .field-items {
+.form-item-type,
+.form-item-severity {
   float: right;
+  padding-right: 0;
+  padding-left: .8em;
 }
 
 
@@ -778,11 +822,20 @@ form .field-add-more-submit {
 
 
 /*
- * modules/field_ui/field_ui-rtl.css
+ * modules/field/theme/field-rtl.css
  */
 
-/* 'Manage fields' overview */
-table.field-ui-overview tr.add-new .label-input {
+form .field-multiple-table th.field-label {
+  padding-right: 0;
+}
+form .field-multiple-table td.field-multiple-drag {
+  padding-left: 0;
+}
+form .field-multiple-table td.field-multiple-drag a.tabledrag-handle{
+  padding-left: .5em;
+}
+.field-label-inline .field-label,
+.field-label-inline .field-items {
   float: right;
 }
 
@@ -791,6 +844,11 @@ table.field-ui-overview tr.add-new .label-input {
  * modules/field_ui/field_ui.css
  */
 
+/**
+ * @file
+ * Stylesheet for the Field UI module.
+ */
+ 
 /* 'Manage fields' and 'Manage display' overviews */
 table.field-ui-overview tr.add-new .label-input {
   float: left; /* LTR */
@@ -800,6 +858,10 @@ table.field-ui-overview tr.add-new .tabledrag-changed {
 }
 table.field-ui-overview tr.add-new .description {
   margin-bottom: 0;
+  max-width: 250px;
+}
+table.field-ui-overview tr.add-new .form-type-machine-name .description {
+  white-space: normal;
 }
 table.field-ui-overview tr.add-new .add-new-placeholder {
   font-weight: bold;
@@ -816,6 +878,10 @@ table.field-ui-overview tr.region-populated {
 }
 table.field-ui-overview tr.region-add-new-title {
   display: none;
+}
+table.field-ui-overview tr.add-new td {
+  vertical-align: top;
+  white-space: nowrap;
 }
 
 /* 'Manage display' overview */
@@ -852,7 +918,27 @@ table.field-ui-overview tr.region-add-new-title {
 
 
 /*
+ * modules/field_ui/field_ui-rtl.css
+ */
+
+/**
+ * @file
+ * Right-to-left specific stylesheet for the Field UI module.
+ */
+
+/* 'Manage fields' overview */
+table.field-ui-overview tr.add-new .label-input {
+  float: right;
+}
+
+
+/*
  * modules/file/file.css
+ */
+
+/**
+ * @file
+ * Admin stylesheet for file module.
  */
 
 /**
@@ -873,10 +959,6 @@ table.field-ui-overview tr.region-add-new-title {
   display: inline;
   float: none;
   padding: 1px 5px 2px 5px;
-}
-
-.form-managed-file div.ajax-progress div {
-  display: inline;
 }
 
 .form-managed-file div.ajax-progress-bar {
@@ -950,28 +1032,6 @@ input#edit-filters-filter-html-settings-allowed-html {
 
 
 /*
- * modules/forum/forum-rtl.css
- */
-
-#forum tr td.forum {
-  padding-left: 0.5em;
-  padding-right: 25px;
-  background-position: 98% 2px;
-}
-.forum-topic-navigation {
-  padding: 1em 3em 0 0;
-}
-.forum-topic-navigation .topic-previous {
-  text-align: left;
-  float: right;
-}
-.forum-topic-navigation .topic-next {
-  text-align: right;
-  float: left;
-}
-
-
-/*
  * modules/forum/forum.css
  */
 
@@ -987,15 +1047,19 @@ input#edit-filters-filter-html-settings-allowed-html {
 #forum td.pager {
   white-space: nowrap;
 }
-#forum tr td.forum {
-  padding-left: 25px; /* LTR */
-  background-position: 2px 2px; /* LTR */
-  background-image: url(../../misc/forum-default.png);
+
+#forum td.forum .icon {
+  background-image: url(../../misc/forum-icons.png);
   background-repeat: no-repeat;
+  float: left; /* LTR */
+  height: 24px;
+  margin: 0 9px 0 0; /* LTR */
+  width: 24px;
 }
-#forum tr.new-topics td.forum {
-  background-image: url(../../misc/forum-new.png);
+#forum td.forum .forum-status-new {
+  background-position: -24px 0;
 }
+
 #forum div.indent {
   margin-left: 20px;
 }
@@ -1023,17 +1087,23 @@ input#edit-filters-filter-html-settings-allowed-html {
 
 
 /*
- * modules/help/help-rtl.css
+ * modules/forum/forum-rtl.css
  */
 
-.help-items {
+#forum td.forum .icon {
   float: right;
-  padding-right: 0;
-  padding-left: 3%;
+  margin: 0 0 0 9px;
 }
-.help-items-last {
-  padding-right: 0;
-  padding-left: 0;
+.forum-topic-navigation {
+  padding: 1em 3em 0 0;
+}
+.forum-topic-navigation .topic-previous {
+  text-align: left;
+  float: right;
+}
+.forum-topic-navigation .topic-next {
+  text-align: right;
+  float: left;
 }
 
 
@@ -1052,18 +1122,17 @@ input#edit-filters-filter-html-settings-allowed-html {
 
 
 /*
- * modules/image/image-rtl.css
+ * modules/help/help-rtl.css
  */
 
-/**
- * Image upload widget.
- */
-div.image-preview {
+.help-items {
   float: right;
-  padding: 0 0 10px 10px;
+  padding-right: 0;
+  padding-left: 3%;
 }
-div.image-widget-data {
-  float: right;
+.help-items-last {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 
@@ -1152,6 +1221,22 @@ div.image-widget-data input.text-field {
 
 
 /*
+ * modules/image/image-rtl.css
+ */
+
+/**
+ * Image upload widget.
+ */
+div.image-preview {
+  float: right;
+  padding: 0 0 10px 10px;
+}
+div.image-widget-data {
+  float: right;
+}
+
+
+/*
  * modules/locale/locale.css
  */
 
@@ -1160,9 +1245,9 @@ div.image-widget-data input.text-field {
   text-decoration: line-through;
 }
 
-.form-item-language,
-.form-item-translation,
-.form-item-group {
+#locale-translation-filter-form .form-item-language,
+#locale-translation-filter-form .form-item-translation,
+#locale-translation-filter-form .form-item-group {
   float: left; /* LTR */
   padding-right: .8em; /* LTR */
   margin: 0.1em;
@@ -1177,16 +1262,31 @@ div.image-widget-data input.text-field {
   width: 100%;
 }
 #locale-translation-filter-form .form-actions {
-  float: left;
-  padding: 3ex 0 0 1em;
+  float: left; /* LTR */
+  padding: 3ex 0 0 1em; /* LTR */
 }
-
 .language-switcher-locale-session a.active {
   color: #0062A0;
 }
-
 .language-switcher-locale-session a.session-active {
   color: #000000;
+}
+
+
+/*
+ * modules/locale/locale-rtl.css
+ */
+
+#locale-translation-filter-form .form-item-language,
+#locale-translation-filter-form .form-item-translation,
+#locale-translation-filter-form .form-item-group {
+  float: right;
+  padding-left: .8em;
+  padding-right: 0;
+}
+#locale-translation-filter-form .form-actions {
+  float: right;
+  padding: 3ex 1em 0 0;
 }
 
 
@@ -1208,25 +1308,6 @@ div.image-widget-data input.text-field {
 
 
 /*
- * modules/node/node-rtl.css
- */
-
-#node-admin-content dl.multiselect dd .form-item label {
-  display: block;
-  float: right;
-  width: 6em;
-  font-weight: normal;
-}
-
-#node-admin-buttons {
-  float: right;
-  margin-left: 0;
-  margin-right: 0.5em;
-  clear: left;
-}
-
-
-/*
  * modules/node/node.css
  */
 
@@ -1238,29 +1319,6 @@ div.image-widget-data input.text-field {
 }
 td.revision-current {
   background: #ffc;
-}
-
-
-/*
- * modules/openid/openid-rtl.css
- */
-
-#edit-openid-identifier {
-  background-position: right 50%;
-  padding-left: 0;
-  padding-right: 20px;
-}
-#user-login .openid-links {
-  padding-right: 0;
-}
-html.js #user-login-form li.openid-link,
-html.js #user-login li.openid-link {
-  margin-right: 0;
-}
-#user-login-form li.openid-link a,
-#user-login li.openid-link a {
-  background-position: right top;
-  padding: 0 1.5em 0 0;
 }
 
 
@@ -1316,6 +1374,29 @@ html.js #user-login li.openid-link {
 
 
 /*
+ * modules/openid/openid-rtl.css
+ */
+
+#edit-openid-identifier {
+  background-position: right 50%;
+  padding-left: 0;
+  padding-right: 20px;
+}
+#user-login .openid-links {
+  padding-right: 0;
+}
+html.js #user-login-form li.openid-link,
+html.js #user-login li.openid-link {
+  margin-right: 0;
+}
+#user-login-form li.openid-link a,
+#user-login li.openid-link a {
+  background-position: right top;
+  padding: 0 1.5em 0 0;
+}
+
+
+/*
  * modules/overlay/overlay-child.css
  */
 
@@ -1337,7 +1418,8 @@ html.js body {
   min-width: 700px;
   position: relative;
   padding: .2em;
-  padding-right: 26px;
+  padding-bottom: 2em;
+  padding-right: 26px; /* LTR */
   width: 88%;
 }
 #overlay-titlebar {
@@ -1359,7 +1441,7 @@ html.js body {
 }
 #overlay-title {
   color: #fff;
-  float: left;
+  float: left; /* LTR */
   font-size: 20px;
   margin: 0;
   padding: 0.3em 0;
@@ -1369,16 +1451,23 @@ html.js body {
   outline: 0;
 }
 
+.overlay #skip-link {
+  margin-top: -20px;
+}
+.overlay #skip-link a {
+  color: #fff; /* This is white to contrast with the dark background behind it. */
+}
+
 #overlay-close-wrapper {
   position: absolute;
-  right: 0;
+  right: 0; /* LTR */
 }
 #overlay-close,
 #overlay-close:hover {
-  background: transparent url(images/close.png) no-repeat;
-  -moz-border-radius-topleft: 0;
-  -webkit-border-top-left-radius: 0;
-  border-top-left-radius: 0;
+  background: transparent url(images/close.png) no-repeat; /* LTR */
+  -moz-border-radius-topleft: 0; /* LTR */
+  -webkit-border-top-left-radius: 0; /* LTR */
+  border-top-left-radius: 0; /* LTR */
   display: block;
   height: 26px;
   margin: 0;
@@ -1395,13 +1484,13 @@ html.js body {
   line-height: 27px;
   margin: -28px 0 0 0;
   position: absolute;
-  right: 20px;
+  right: 20px; /* LTR */
   text-transform: uppercase;
 }
 #overlay-tabs li {
   display: inline;
   list-style: none;
-  margin: 0 0 0 -3px;
+  margin: 0 0 0 -3px; /* LTR */
   padding: 0;
 }
 #overlay-tabs li a,
@@ -1480,6 +1569,46 @@ html.js body {
 
 
 /*
+ * modules/overlay/overlay-child-rtl.css
+ */
+
+html {
+  direction: rtl;
+}
+
+#overlay-title {
+  float: right;
+  left: auto;
+}
+#overlay {
+  padding: 0.2em;
+  padding-left: 26px;
+}
+#overlay-close-wrapper {
+  left: 0;
+  right: auto;
+}
+#overlay-close,
+#overlay-close:hover {
+  background: transparent url(images/close-rtl.png) no-repeat;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/**
+ * Tabs on the overlay.
+ */
+#overlay-tabs {
+  left: 20px;
+  right: auto;
+}
+#overlay-tabs li {
+  margin: 0 -3px 0 0;
+}
+
+
+/*
  * modules/overlay/overlay-parent.css
  */
 
@@ -1531,21 +1660,6 @@ html.overlay-open .displace-bottom {
 }
 html.overlay-open #overlay-disable-message {
   display: block;
-}
-
-
-/*
- * modules/poll/poll-rtl.css
- */
-
-.poll .bar .foreground {
-  float: right;
-}
-.poll .percent {
-  text-align: left;
-}
-.poll .vote-form .choices {
-  text-align: right;
 }
 
 
@@ -1606,6 +1720,21 @@ td.poll-chvotes .form-text {
 
 
 /*
+ * modules/poll/poll-rtl.css
+ */
+
+.poll .bar .foreground {
+  float: right;
+}
+.poll .percent {
+  text-align: left;
+}
+.poll .vote-form .choices {
+  text-align: right;
+}
+
+
+/*
  * modules/profile/profile.css
  */
 
@@ -1617,24 +1746,6 @@ td.poll-chvotes .form-text {
 }
 #profile-fields tr.category-populated {
   display: none;
-}
-
-
-/*
- * modules/search/search-rtl.css
- */
-
-.search-advanced .criterion {
-  float: right;
-  margin-right: 0;
-  margin-left: 2em;
-}
-.search-advanced .action {
-  float: right;
-  clear: right;
-}
-.search-results .search-snippet-info {
-  padding-right: 1em; /* LTR */
 }
 
 
@@ -1678,54 +1789,20 @@ td.poll-chvotes .form-text {
 
 
 /*
- * modules/shortcut/shortcut-rtl.css
+ * modules/search/search-rtl.css
  */
 
-div#toolbar a#edit-shortcuts {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 5px 5px 5px 10px;
-}
-div#toolbar div.toolbar-shortcuts ul {
-  float: none;
-  margin-right: 5px;
-  margin-left: 10em;
-}
-div#toolbar div.toolbar-shortcuts ul li a {
-  margin-left: 5px;
+.search-advanced .criterion {
+  float: right;
   margin-right: 0;
-  padding: 0 5px;
+  margin-left: 2em;
 }
-div#toolbar div.toolbar-shortcuts span.icon {
+.search-advanced .action {
   float: right;
+  clear: right;
 }
-div.add-or-remove-shortcuts a span.icon {
-  float: right;
-  margin-right: 8px;
-  margin-left: 0;
-}
-div.add-or-remove-shortcuts a span.text {
-  float: right;
-  padding-right: 10px;
-  padding-left: 0;
-}
-div.add-or-remove-shortcuts a:hover span.text {
-  -moz-border-radius: 5px 0 0 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-radius: 5px 0 0 5px;
-  padding-left: 6px;
-}
-#shortcut-set-switch .form-item-new {
-  padding-right: 17px;
-  padding-left: 0;
-}
-div.add-shortcut a:hover span.icon {
-  background-position: 0 -24px;
-}
-div.remove-shortcut a:hover span.icon {
-  background-position: -12px -24px;
+.search-results .search-snippet-info {
+  padding-right: 1em; /* LTR */
 }
 
 
@@ -1855,93 +1932,149 @@ div.add-or-remove-shortcuts a:hover span.text {
 
 
 /*
- * modules/system/system.admin-rtl.css
+ * modules/shortcut/shortcut-rtl.css
  */
 
-/**
- * @file
- * RTL styles for administration pages.
- */
-
-/**
- * Administration blocks.
- */
-div.admin-panel .body {
-  padding: 0 8px 2px 4px;
+div#toolbar a#edit-shortcuts {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px 5px 5px 10px;
 }
-div.admin .left {
+div#toolbar div.toolbar-shortcuts ul {
+  float: none;
+  margin-right: 5px;
+  margin-left: 10em;
+}
+div#toolbar div.toolbar-shortcuts ul li a {
+  margin-left: 5px;
+  margin-right: 0;
+  padding: 0 5px;
+}
+div#toolbar div.toolbar-shortcuts span.icon {
   float: right;
+}
+div.add-or-remove-shortcuts a span.icon {
+  float: right;
+  margin-right: 8px;
   margin-left: 0;
-  margin-right: 1em;
 }
-div.admin .right {
-  float: left;
-  margin-left: 1em;
-  margin-right: 0;
-}
-div.admin .expert-link {
-  margin-right: 0;
-  margin-left: 1em;
-  padding-right: 0;
-  padding-left: 4px;
-  text-align: left;
-}
-
-/**
- * Status report.
- */
-table.system-status-report td.status-icon {
+div.add-or-remove-shortcuts a span.text {
+  float: right;
+  padding-right: 10px;
   padding-left: 0;
-  padding-right: 6px;
 }
-table.system-status-report tr.merge-up td {
-  padding: 0 28px 8px 6px;
+div.add-or-remove-shortcuts a:focus span.text,
+div.add-or-remove-shortcuts a:hover span.text {
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-radius: 5px 0 0 5px;
+  padding-left: 6px;
 }
-
-/**
- * Appearance page.
- */
-table.screenshot {
-  margin-left: 1em;
+#shortcut-set-switch .form-item-new {
+  padding-right: 17px;
+  padding-left: 0;
 }
-.system-themes-list-enabled .theme-selector .screenshot,
-.system-themes-list-enabled .theme-selector .no-screenshot {
-  float: right;
-  margin: 0 0 0 20px;
+div.add-shortcut a:hover span.icon {
+  background-position: 0 -24px;
 }
-.system-themes-list-disabled .theme-selector {
-  float: right;
-  padding: 20px 0 20px 20px;
-}
-.theme-selector .operations li {
-  border-right: none;
-  border-left: 1px solid #cdcdcd;
-  float: right;
-}
-.theme-selector .operations li.last {
-  border-left: none;
-  padding: 0 0.7em 0 0;
-}
-.theme-selector .operations li.first {
-  padding: 0 0 0 0.7em;
+div.remove-shortcut a:hover span.icon {
+  background-position: -12px -24px;
 }
 
-/**
- * Exposed filters.
+
+/*
+ * modules/simpletest/simpletest.css
  */
-.exposed-filters .filters {
-  float: right;
-  margin-left: 1em;
-  margin-right: 0;
+
+/* Test Table */
+#simpletest-form-table th.select-all {
+  width: 1em;
 }
-.exposed-filters .form-item label {
-  float: right;
+th.simpletest_test {
+  width: 16em;
 }
-/* Current filters */
-.exposed-filters .additional-filters {
-  float: right;
-  margin-left: 1em;
-  margin-right: 0;
+
+.simpletest-image {
+  display: inline-block;
+  cursor: pointer;
+  width: 1em;
+}
+.simpletest-group-label label {
+  display: inline;
+  font-weight: bold;
+}
+.simpletest-test-label label {
+  margin-left: 1em; /* LTR */
+}
+.simpletest-test-description .description {
+  margin: 0;
+}
+#simpletest-form-table tr td {
+  background-color: white;
+  color: #494949;
+}
+#simpletest-form-table tr.simpletest-group td {
+  background-color: #EDF5FA;
+  color: #494949;
+}
+
+table#simpletest-form-table tr.simpletest-group label {
+  display: inline;
+}
+
+div.message > div.item-list {
+  font-weight: normal;
+}
+
+div.simpletest-pass {
+  color: #33a333;
+}
+.simpletest-fail {
+  color: #981010;
+}
+
+tr.simpletest-pass.odd {
+  background-color: #b6ffb6;
+}
+tr.simpletest-pass.even {
+  background-color: #9bff9b;
+}
+tr.simpletest-fail.odd {
+  background-color: #ffc9c9;
+}
+tr.simpletest-fail.even {
+  background-color: #ffacac;
+}
+tr.simpletest-exception.odd {
+  background-color: #f4ea71;
+}
+tr.simpletest-exception.even {
+  background-color: #f5e742;
+}
+tr.simpletest-debug.odd {
+  background-color: #eee;
+}
+tr.simpletest-debug.even {
+  background-color: #fff;
+}
+
+a.simpletest-collapse {
+  height: 0;
+  width: 0;
+  top: -99em;
+  position: absolute;
+}
+a.simpletest-collapse:focus,
+a.simpletest-collapse:hover {
+  font-size: 80%;
+  top: 0px;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  position: relative;
+  z-index: 1000;
 }
 
 
@@ -2222,62 +2355,94 @@ table.screenshot {
 
 
 /*
- * modules/system/system.base-rtl.css
+ * modules/system/system.admin-rtl.css
  */
 
 /**
  * @file
- * Generic theme-independent base styles.
+ * RTL styles for administration pages.
  */
 
 /**
- * Autocomplete.
+ * Administration blocks.
  */
-/* Animated throbber */
-html.js input.form-autocomplete {
-  background-position: 0% 2px;
+div.admin-panel .body {
+  padding: 0 8px 2px 4px;
 }
-html.js input.throbbing {
-  background-position: 0% -18px;
+div.admin .left {
+  float: right;
+  margin-left: 0;
+  margin-right: 1em;
 }
-
-/**
- * Progress bar.
- */
-.progress .percentage {
+div.admin .right {
   float: left;
+  margin-left: 1em;
+  margin-right: 0;
 }
-.progress-disabled {
-  float: right;
-}
-.ajax-progress {
-  float: right;
-}
-.ajax-progress .throbber {
-  float: right;
-}
-
-/**
- * TableDrag behavior.
- */
-.draggable a.tabledrag-handle {
-  float: right;
-  margin: -0.4em -0.5em -0.4em 0;
-  padding: 0.42em 0.5em 0.42em 1.5em;
-}
-div.indentation {
-  float: right;
-  margin: -0.4em -0.4em -0.4em 0.2em;
-  padding: 0.42em 0.6em 0.42em 0;
-}
-div.tree-child,
-div.tree-child-last {
-  background-position: -65px center;
-}
-.tabledrag-toggle-weight-wrapper {
+div.admin .expert-link {
+  margin-right: 0;
+  margin-left: 1em;
+  padding-right: 0;
+  padding-left: 4px;
   text-align: left;
 }
 
+/**
+ * Status report.
+ */
+table.system-status-report td.status-icon {
+  padding-left: 0;
+  padding-right: 6px;
+}
+table.system-status-report tr.merge-up td {
+  padding: 0 28px 8px 6px;
+}
+
+/**
+ * Appearance page.
+ */
+table.screenshot {
+  margin-left: 1em;
+}
+.system-themes-list-enabled .theme-selector .screenshot,
+.system-themes-list-enabled .theme-selector .no-screenshot {
+  float: right;
+  margin: 0 0 0 20px;
+}
+.system-themes-list-disabled .theme-selector {
+  float: right;
+  padding: 20px 0 20px 20px;
+}
+.theme-selector .operations li {
+  border-right: none;
+  border-left: 1px solid #cdcdcd;
+  float: right;
+}
+.theme-selector .operations li.last {
+  border-left: none;
+  padding: 0 0.7em 0 0;
+}
+.theme-selector .operations li.first {
+  padding: 0 0 0 0.7em;
+}
+
+/**
+ * Exposed filters.
+ */
+.exposed-filters .filters {
+  float: right;
+  margin-left: 1em;
+  margin-right: 0;
+}
+.exposed-filters .form-item label {
+  float: right;
+}
+/* Current filters */
+.exposed-filters .additional-filters {
+  float: right;
+  margin-left: 1em;
+  margin-right: 0;
+}
 
 
 /*
@@ -2378,21 +2543,22 @@ body.drag {
   cursor: move;
   float: left; /* LTR */
   height: 1.7em;
-  margin: -0.4em 0 -0.4em -0.5em; /* LTR */
-  padding: 0.42em 1.5em 0.42em 0.5em; /* LTR */
+  margin-left: -1em; /* LTR */
+  overflow: hidden;
   text-decoration: none;
 }
 a.tabledrag-handle:hover {
   text-decoration: none;
 }
 a.tabledrag-handle .handle {
-  background: url(../../misc/draggable.png) no-repeat 0 0;
+  background: url(../../misc/draggable.png) no-repeat 6px 9px;
   height: 13px;
-  margin-top: 4px;
+  margin: -0.4em 0.5em; /* LTR */
+  padding: 0.42em 0.5em; /* LTR */
   width: 13px;
 }
 a.tabledrag-handle-hover .handle {
-  background-position: 0 -20px;
+  background-position: 6px -11px;
 }
 div.indentation {
   float: left; /* LTR */
@@ -2442,12 +2608,9 @@ table.sticky-header {
 .progress .percentage {
   float: right; /* LTR */
 }
-.progress-disabled {
-  float: left; /* LTR */
-}
 /* Throbber */
 .ajax-progress {
-  float: left; /* LTR */
+  display: inline-block;
 }
 .ajax-progress .throbber {
   background: transparent url(../../misc/throbber.gif) no-repeat 0px -18px;
@@ -2455,6 +2618,9 @@ table.sticky-header {
   height: 15px;
   margin: 2px;
   width: 15px;
+}
+.ajax-progress .message {
+  padding-left: 20px;
 }
 tr .ajax-progress .throbber {
   margin: 0 2px;
@@ -2549,6 +2715,68 @@ html.js .js-hide {
 
 
 /*
+ * modules/system/system.base-rtl.css
+ */
+
+/**
+ * @file
+ * Generic theme-independent base styles.
+ */
+
+/**
+ * Autocomplete.
+ */
+/* Animated throbber */
+html.js input.form-autocomplete {
+  background-position: 0% 2px;
+}
+html.js input.throbbing {
+  background-position: 0% -18px;
+}
+
+/**
+ * Progress bar.
+ */
+.progress .percentage {
+  float: left;
+}
+.progress-disabled {
+  float: right;
+}
+.ajax-progress {
+  float: right;
+}
+.ajax-progress .throbber {
+  float: right;
+}
+
+/**
+ * TableDrag behavior.
+ */
+.draggable a.tabledrag-handle {
+  float: right;
+  margin-right: -1em;
+  margin-left: 0;
+}
+a.tabledrag-handle .handle {
+  margin: -0.4em 0.5em;
+  padding: 0.42em 0.5em;
+}
+div.indentation {
+  float: right;
+  margin: -0.4em -0.4em -0.4em 0.2em;
+  padding: 0.42em 0.6em 0.42em 0;
+}
+div.tree-child,
+div.tree-child-last {
+  background-position: -65px center;
+}
+.tabledrag-toggle-weight-wrapper {
+  text-align: left;
+}
+
+
+/*
  * modules/system/system.maintenance.css
  */
 
@@ -2605,48 +2833,6 @@ ol.task-list li.active {
  */
 #clean-url.install {
   display: none;
-}
-
-
-/*
- * modules/system/system.menus-rtl.css
- */
-
-/**
- * @file
- * RTL styles for menus and navigation markup.
- */
-
-ul.menu {
-  text-align:right;
-}
-ul.menu li {
-  margin: 0 0.5em 0 0;
-}
-ul li.collapsed {
-  list-style-image: url(../../misc/menu-collapsed-rtl.png);
-}
-li.expanded,
-li.collapsed,
-li.leaf {
-  padding: 0.2em 0 0 0.5em;
-}
-
-/**
- * Markup generated by theme_menu_local_tasks().
- */
-ul.primary {
-  padding: 0 1em 0 0;
-}
-ul.primary li a {
-  margin-right: 5px;
-  margin-left: 0.5em;
-}
-ul.secondary li {
-  border-left: 1px solid #ccc;
-  border-right: none;
-  display: inline;
-  padding: 0 1em;
 }
 
 
@@ -2772,20 +2958,44 @@ ul.secondary a.active {
 
 
 /*
- * modules/system/system.messages-rtl.css
+ * modules/system/system.menus-rtl.css
  */
 
 /**
  * @file
- * RTL Styles for system messages.
+ * RTL styles for menus and navigation markup.
  */
 
-div.messages {
-  background-position: 99% 8px;
-  padding: 10px 50px 10px 10px;
+ul.menu {
+  text-align:right;
 }
-div.messages ul {
-  margin: 0 1em 0 0;
+ul.menu li {
+  margin: 0 0.5em 0 0;
+}
+ul li.collapsed {
+  list-style-image: url(../../misc/menu-collapsed-rtl.png);
+}
+li.expanded,
+li.collapsed,
+li.leaf {
+  padding: 0.2em 0 0 0.5em;
+}
+
+/**
+ * Markup generated by theme_menu_local_tasks().
+ */
+ul.primary {
+  padding: 0 1em 0 0;
+}
+ul.primary li a {
+  margin-right: 5px;
+  margin-left: 0.5em;
+}
+ul.secondary li {
+  border-left: 1px solid #ccc;
+  border-right: none;
+  display: inline;
+  padding: 0 1em;
 }
 
 
@@ -2858,59 +3068,20 @@ div.messages ul li {
 
 
 /*
- * modules/system/system.theme-rtl.css
+ * modules/system/system.messages-rtl.css
  */
 
 /**
  * @file
- * RTL styles for common markup.
+ * RTL Styles for system messages.
  */
 
-/**
- * HTML elements.
- */
-th {
-  text-align: right;
-  padding-left: 1em;
-  padding-right: 0;
+div.messages {
+  background-position: 99% 8px;
+  padding: 10px 50px 10px 10px;
 }
-
-/**
- * Markup generated by theme_item_list().
- */
-.item-list ul li {
-  margin: 0 1.5em 0.25em 0;
-}
-
-/**
- * Markup generated by theme_more_link().
- */
-.more-link {
-  text-align: left;
-}
-
-/**
- * Markup generated by theme_more_help_link().
- */
-.more-help-link {
-  text-align: left;
-}
-.more-help-link a {
-  background-position: 100% 50%;
-  padding: 1px 20px 1px 0;
-}
-
-/**
- * Collapsible fieldsets.
- */
-html.js fieldset.collapsible .fieldset-legend {
-  background-position: 98% 75%;
-  padding-left: 0;
-  padding-right: 15px;
-}
-html.js fieldset.collapsed .fieldset-legend {
-  background-image: url(../../misc/menu-collapsed-rtl.png);
-  background-position: 98% 50%;
+div.messages ul {
+  margin: 0 1em 0 0;
 }
 
 
@@ -3159,6 +3330,63 @@ th.checkbox {
 
 
 /*
+ * modules/system/system.theme-rtl.css
+ */
+
+/**
+ * @file
+ * RTL styles for common markup.
+ */
+
+/**
+ * HTML elements.
+ */
+th {
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 0;
+}
+
+/**
+ * Markup generated by theme_item_list().
+ */
+.item-list ul li {
+  margin: 0 1.5em 0.25em 0;
+}
+
+/**
+ * Markup generated by theme_more_link().
+ */
+.more-link {
+  text-align: left;
+}
+
+/**
+ * Markup generated by theme_more_help_link().
+ */
+.more-help-link {
+  text-align: left;
+}
+.more-help-link a {
+  background-position: 100% 50%;
+  padding: 1px 20px 1px 0;
+}
+
+/**
+ * Collapsible fieldsets.
+ */
+html.js fieldset.collapsible .fieldset-legend {
+  background-position: 98% 75%;
+  padding-left: 0;
+  padding-right: 15px;
+}
+html.js fieldset.collapsed .fieldset-legend {
+  background-image: url(../../misc/menu-collapsed-rtl.png);
+  background-position: 98% 50%;
+}
+
+
+/*
  * modules/taxonomy/taxonomy.css
  */
 
@@ -3177,6 +3405,161 @@ tr.taxonomy-term-divider-bottom {
 
 
 /*
+ * modules/toolbar/toolbar.css
+ */
+
+body.toolbar {
+  padding-top: 2.2em;
+}
+body.toolbar-drawer {
+  padding-top: 5.3em;
+}
+
+/**
+ * Aggressive resets so we can achieve a consistent look in hostile CSS
+ * environments.
+ */
+#toolbar,
+#toolbar * {
+  border: 0;
+  font-size: 100%;
+  line-height: inherit;
+  list-style: none;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left; /* LTR */
+  vertical-align: baseline;
+}
+
+/**
+ * Base styles.
+ *
+ * We use a keyword for the toolbar font size to make it display consistently
+ * across different themes, while still allowing browsers to resize the text.
+ */
+#toolbar {
+  background: #666;
+  color: #ccc;
+  font: normal small "Lucida Grande", Verdana, sans-serif;
+  left: 0;
+  margin: 0 -20px;
+  padding: 0 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -moz-box-shadow: 0 3px 20px #000;
+  -webkit-box-shadow: 0 3px 20px #000;
+  box-shadow: 0 3px 20px #000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction='180', strength='10');
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction='180', strength='10')";
+  z-index: 600;
+}
+#toolbar div.collapsed {
+  display: none;
+  visibility: hidden;
+}
+#toolbar a {
+  color: #fff;
+  font-size: .846em;
+  text-decoration: none;
+}
+#toolbar ul li,
+#toolbar ul li a {
+  float: left; /* LTR */
+}
+
+/**
+ * Administration menu.
+ */
+#toolbar div.toolbar-menu {
+  background: #000;
+  line-height: 20px;
+  padding: 5px 50px 5px 10px; /* LTR */
+  position: relative;
+}
+#toolbar-home a span {
+  background: url(toolbar.png) no-repeat 0 -45px;
+  display: block;
+  height: 14px;
+  margin: 3px 0px;
+  text-indent: -9999px;
+  vertical-align: text-bottom;
+  width: 11px;
+}
+#toolbar-user {
+  float: right; /* LTR */
+}
+#toolbar-menu {
+  float: left; /* LTR */
+}
+#toolbar div.toolbar-menu a.toggle {
+  background: url(toolbar.png) 0 -20px no-repeat;
+  bottom: 0;
+  cursor: pointer;
+  height: 25px;
+  overflow: hidden;
+  position: absolute;
+  right: 10px; /* LTR */
+  text-indent: -9999px;
+  width: 25px;
+}
+#toolbar div.toolbar-menu a.toggle:focus,
+#toolbar div.toolbar-menu a.toggle:hover {
+  background-position:  -50px -20px;
+}
+#toolbar div.toolbar-menu a.toggle-active {
+  background-position:  -25px -20px;
+}
+#toolbar div.toolbar-menu a.toggle-active.toggle:focus,
+#toolbar div.toolbar-menu a.toggle-active.toggle:hover {
+  background-position:  -75px -20px;
+}
+#toolbar div.toolbar-menu ul li a {
+  padding: 0 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#toolbar div.toolbar-menu ul li a:focus,
+#toolbar div.toolbar-menu ul li a:hover,
+#toolbar div.toolbar-menu ul li a:active,
+#toolbar div.toolbar-menu ul li a.active:focus {
+  background: #444;
+}
+#toolbar div.toolbar-menu ul li a.active:hover,
+#toolbar div.toolbar-menu ul li a.active:active,
+#toolbar div.toolbar-menu ul li a.active,
+#toolbar div.toolbar-menu ul li.active-trail a {
+  background: url(toolbar.png) 0 0 repeat-x;
+  text-shadow: #333 0 1px 0;
+}
+
+/**
+ * Collapsed drawer of additional toolbar content.
+ */
+#toolbar div.toolbar-drawer {
+  position: relative;
+  padding: 0 10px;
+}
+
+/**
+ * IE 6 Fix.
+ *
+ * IE 6 shows elements with position:fixed as position:static so we replace
+ * it with position:absolute; toolbar needs its z-index to stay above overlay.
+ */
+* html #toolbar {
+  left: -20px;
+  margin: 0;
+  padding-right: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+
+/*
  * modules/toolbar/toolbar-rtl.css
  */
 
@@ -3188,8 +3571,8 @@ tr.taxonomy-term-divider-bottom {
   float: right;
 }
 #toolbar ul li a {
-  float: none;
   display: inline-block;
+  float: none;
   zoom: 1;
 }
 #toolbar div.toolbar-menu {
@@ -3199,8 +3582,8 @@ tr.taxonomy-term-divider-bottom {
   float: left;
 }
 #toolbar ul#toolbar-user li {
-  display: inline;
   float: none;
+  display: inline;
 }
 #toolbar-menu {
   float: none;
@@ -3223,173 +3606,6 @@ tr.taxonomy-term-divider-bottom {
 
 
 /*
- * modules/toolbar/toolbar.css
- */
-
-body.toolbar {
-  padding-top: 2.2em;
-}
-
-body.toolbar-drawer {
-  padding-top: 5.3em;
-}
-
-/**
- * Aggressive resets so we can achieve a consistent look in hostile CSS
- * environments.
- */
-#toolbar,
-#toolbar * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  line-height: inherit;
-  text-align: left; /* LTR */
-  list-style: none;
-}
-
-/**
- * Base styles.
- *
- * We use a keyword for the toolbar font size to make it display consistently
- * across different themes, while still allowing browsers to resize the text.
- */
-#toolbar {
-  font: normal small "Lucida Grande", Verdana, sans-serif;
-  background: #666;
-  color: #ccc;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 -20px;
-  padding: 0 20px;
-  z-index: 600;
-  -moz-box-shadow: 0 3px 20px #000;
-  -webkit-box-shadow: 0 3px 20px #000;
-  box-shadow: 0 3px 20px #000;
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction='180', strength='10');
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#000000, direction='180', strength='10')";
-}
-
-#toolbar div.collapsed {
-  display: none;
-  visibility: hidden;
-}
-
-#toolbar a {
-  color: #fff;
-  font-size: .846em;
-  text-decoration: none;
-}
-
-#toolbar ul li,
-#toolbar ul li a {
-  float: left; /* LTR */
-}
-
-/**
- * Administration menu.
- */
-#toolbar div.toolbar-menu {
-  background: #000;
-  line-height: 20px;
-  padding: 5px 50px 5px 10px; /* LTR */
-  position: relative;
-}
-
-#toolbar-home a span {
-  vertical-align: text-bottom;
-  width: 11px;
-  height: 14px;
-  display: block;
-  background: url(toolbar.png) no-repeat 0 -45px;
-  text-indent: -9999px;
-  margin: 3px 0px;
-}
-
-#toolbar-user {
-  float: right; /* LTR */
-}
-
-#toolbar-menu {
-  float: left; /* LTR */
-}
-
-#toolbar div.toolbar-menu a.toggle {
-  position: absolute;
-  right: 10px; /* LTR */
-  bottom: 0;
-  cursor: pointer;
-  background: url(toolbar.png) 0 -20px no-repeat;
-  text-indent: -9999px;
-  overflow: hidden;
-  width: 25px;
-  height: 25px;
-}
-#toolbar div.toolbar-menu a.toggle:focus,
-#toolbar div.toolbar-menu a.toggle:hover {
-background-position:  -50px -20px;
-}
-
-#toolbar div.toolbar-menu a.toggle-active {
-  background-position:  -25px -20px;
-}
-#toolbar div.toolbar-menu a.toggle-active.toggle:focus,
-#toolbar div.toolbar-menu a.toggle-active.toggle:hover {
-background-position:  -75px -20px;
-}
-
-#toolbar div.toolbar-menu ul li a {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  padding: 0 10px;
-}
-
-#toolbar div.toolbar-menu ul li a:focus,
-#toolbar div.toolbar-menu ul li a:hover,
-#toolbar div.toolbar-menu ul li a:active,
-#toolbar div.toolbar-menu ul li a.active:focus {
-  background: #444;
-}
-
-#toolbar div.toolbar-menu ul li a.active:hover,
-#toolbar div.toolbar-menu ul li a.active:active,
-#toolbar div.toolbar-menu ul li a.active,
-#toolbar div.toolbar-menu ul li.active-trail a {
-  text-shadow: #333 0 1px 0;
-  background: url(toolbar.png) 0 0 repeat-x;
-}
-
-/**
- * Collapsed drawer of additional toolbar content.
- */
-#toolbar div.toolbar-drawer {
-  position: relative;
-  padding: 0 10px;
-}
-
-/**
- * IE 6 Fix.
- *
- * IE 6 shows elements with position:fixed as position:static so we replace
- * it with position:absolute; toolbar needs its z-index to stay above overlay.
- */
-* html #toolbar {
-  position: absolute;
-  margin: 0;
-  padding-right: 0;
-  left: -20px;
-  right: 0;
-  width: 100%;
-}
-
-
-/*
  * modules/tracker/tracker.css
  */
 
@@ -3398,42 +3614,6 @@ background-position:  -75px -20px;
 }
 .page-tracker table {
   width: 100%;
-}
-
-
-/*
- * modules/update/update-rtl.css
- */
-
-.update .project {
-  padding-right: .25em;
-}
-
-.update .version-status {
-  float: left;
-  padding-left: 10px;
-}
-
-.update .version-status .icon {
-  padding-right: .5em;
-}
-
-.update table.version .version-title {
-  padding-left: 1em;
-}
-
-.update table.version .version-details {
-  padding-left: .5em;
-  direction: ltr;
-}
-
-.update table.version .version-links {
-  text-align: left;
-  padding-left: 1em;
-}
-
-.update .check-manually {
-  padding-right: 1em;
 }
 
 
@@ -3573,36 +3753,38 @@ th.update-project-name {
 
 
 /*
- * modules/user/user-rtl.css
+ * modules/update/update-rtl.css
  */
 
-#permissions td.permission {
-  padding-left: 0;
-  padding-right: 1.5em;
+.update .project {
+  padding-right: .25em;
 }
 
-/**
- * Password strength indicator.
- */
-input.password-field {
-  margin-left: 10px;
-  margin-right: 0;
-}
-input.password-confirm {
-  margin-left: 10px;
-  margin-right: 0;
-}
-.password-strength-title {
-  float: right;
-}
-.password-parent {
-  float: right;
-}
-
-/* Generated by user.module but used by profile.module: */
-.profile .user-picture {
+.update .version-status {
   float: left;
-  margin: 0 0 1em 1em;
+  padding-left: 10px;
+}
+
+.update .version-status .icon {
+  padding-right: .5em;
+}
+
+.update table.version .version-title {
+  padding-left: 1em;
+}
+
+.update table.version .version-details {
+  padding-left: .5em;
+  direction: ltr;
+}
+
+.update table.version .version-links {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.update .check-manually {
+  padding-right: 1em;
 }
 
 
@@ -3633,8 +3815,8 @@ input.password-confirm {
   clear: both;
 }
 #user-admin-roles .form-item-name {
-  float: left;
-  margin-right: 1em;
+  float: left; /* LTR */
+  margin-right: 1em; /* LTR */
 }
 
 /**
@@ -3668,8 +3850,10 @@ input.password-field {
   margin-bottom: 0.4em;
 }
 div.password-confirm {
-  display: inline;
-  padding-left: 1em;
+  float: right;  /* LTR */
+  margin-top: 1.5em;
+  visibility: hidden;
+  width: 17em;
 }
 div.form-item div.password-suggestions {
   padding: 0.2em 0.5em;
@@ -3680,19 +3864,11 @@ div.form-item div.password-suggestions {
 div.password-suggestions ul {
   margin-bottom: 0;
 }
+.confirm-parent,
 .password-parent {
+  clear: left; /* LTR */
   margin: 0;
-  width: 34.3em;
-}
-
-/**
- * Password confirmation checker.
- */
-.confirm-parent {
-  margin: 0;
-}
-div.password-confirm {
-  visibility: hidden;
+  width: 36.3em;
 }
 
 /* Generated by user.module but used by profile.module: */
@@ -3716,4 +3892,43 @@ div.password-confirm {
 }
 .profile dd {
   margin: 0 0 1em 0;
+}
+
+
+/*
+ * modules/user/user-rtl.css
+ */
+
+#permissions td.permission {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+
+#user-admin-roles .form-item-name {
+  float: right;
+  margin-left: 1em;
+  margin-right: 0;
+}
+
+/**
+ * Password strength indicator.
+ */
+.password-strength {
+  float: left;
+}
+.password-strength-text {
+  float: left;
+}
+div.password-confirm {
+  float: left;
+}
+.confirm-parent,
+.password-parent {
+  clear: right;
+}
+
+/* Generated by user.module but used by profile.module: */
+.profile .user-picture {
+  float: left;
+  margin: 0 0 1em 1em;
 }

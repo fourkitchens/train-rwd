@@ -7,15 +7,14 @@ projects[] = ctools
 projects[] = views
 
 ; Responsive tools
-projects[] = responder
 projects[] = modernizr
-projects[] = responsive_images
+projects[] = responder
+projects[] = respondjs
 
 ; Base themes
 projects[] = adaptivetheme
-projects[] = omega
 projects[] = zen
 
 ; Libraries
 libraries[respond] = https://github.com/scottjehl/Respond/zipball/master
-libraries[modernizr] = http://www.modernizr.com/downloads/modernizr-2.0.6.js
+libraries[modernizr] = http://www.modernizr.com/downloads/modernizr-2.6.1.js

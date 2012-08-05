@@ -7,14 +7,19 @@
 /*
  * Header
  */
-#logo /* Wrapping link for logo */ {
+
+#logo { /* Wrapping link for logo */
   float: right;
 }
 
 /*
  * Content
  */
-ul.links li /* List of links */ {
+
+ul.inline li { /* List of links */
   display: inline-block; /* Bug in Safari causes display: inline to fail. */
+  padding: 0 0 0 1em;
+}
+span.field-label { /* The inline field label used by the Fences.module */
   padding: 0 0 0 1em;
 }

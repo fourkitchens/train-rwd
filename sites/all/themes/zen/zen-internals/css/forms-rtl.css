@@ -7,10 +7,10 @@
 /*
  * Drupal's default login form block
  */
+
 #user-login-form {
   text-align: right;
 }
-
 
 /*
  * OpenID
@@ -20,11 +20,10 @@
  */
 
 html.js #user-login-form li.openid-link,
-#user-login-form li.openid-link /* The "Log in using OpenID" link. */ {
+#user-login-form li.openid-link { /* The "Log in using OpenID" link. */
   margin-left: 0;
   margin-right: -20px; /* Un-do some of the padding on the ul list. */
 }
-
 
 /*
  * Drupal admin tables

@@ -1,3 +1,85 @@
+Zen 7.x-5.1, 2012-05-18
+-----------------------
+- #1558952 by oeroek: #navigation overflows parent container in fixed width layout
+- #1567606 by bluehat: #content overflows parent container in fixed width layout, with no sidebars
+- #1571832: PHP Notice: Undefined index: content in template.php's zen_html_head_alter()
+- #1577934 by n8tron: Use of add_import_path in config.rb causes compass watch to fail
+- Update to Zen Grids 1.2
+- #1554848 by bluehat: Vertical positioning of navigation is wrong/too high
+- #1557828: PHP warnings due to maintenance-page.tpl being out-of-sync from html.tpl and page.tpl
+
+Zen 7.x-5.0, 2012-04-27
+-----------------------
+- #1539166: Remove page-backgrounds.css
+- #1420476 by maartenverbaarschot and JohnAlbin: a.button needs styling
+- #1532268: Allow sub-theme to import a module's Sass files
+- #1530204: Update meta tags to match Drupal 8
+- #1463138 by JohnAlbin and KrisBulman: Tabs css conflict with views
+- #1144240 by KrisBulman and JohnAlbin: Make menu block styling the same as theme's menu links in navigation region
+- #1527126: Inline link styling is broken
+- #1524228: Turn off IE6/7 support by default
+- #1181622: Add responsive layouts to Zen
+- #1403052 by jensimmons: Add if statement around <header> in node.tpl
+- Remove clearfix classes from page.tpl
+- #1468104: Conditional classes on html tag cause IE compatibility mode button to show
+- #1440230: Update IE html classes to match new names from HTML5 boilerplate v3
+- #1105868 by maartenverbaarschot, echoz and JohnAlbin: Add needed JavaScript documentation to script.js
+- #1406704 by echoz, 3goose and JohnAlbin: double dash in comments breaks layout in Camino and some other browsers
+- #1426260 by gleroux02: Javascript error in html5-respond.js
+- #1389060: Update to v3 of HTML5 shim and remove InnerShiv
+- #1361592: Remove div.content from block.tpl
+- #1348258: Add box-sizing: border-box to the Zen Columns layout method
+- #1355444: $rdf_namespaces variable incorrectly printed in maintenance-page.tpl
+- #1246540 by EverettZ, JohnAlbin, KrisBulman, mgifford: Add aria landmark roles to Zen
+- #1249314: Make respond.js, HTML5 shim and mobile meta tags optional
+- #1347236: Convert page markup to HTML5
+- #1352308: Add HTML comments for region template suggestions
+- #1352296: Remove "with-navigation" class and make navigation bar display unconditionally
+- #1348032 by JohnAlbin, maartenverbaarschot and echoz: Convert breadcrumb markup to HTML5
+- #1347934: region--content.tpl doesn't override region--no-wrapper.tpl
+- #1343982: Convert node markup to HTML5
+- #1343896: Convert comment markup to HTML5
+- #1343916: Make user pictures more semantic by inlining with "submitted" content
+- #1343856: Add <time> with pubdate to nodes and comments
+- #1295296 by echoz and JohnAlbin: Add HTML5 display definitions from D8 and normalize.css
+- #1329530: Rename "--bare" templates to use the more descriptive "--no-wrapper"
+- #1295716 by KrisBulman: system.menu.css only overridden in starterkit, not zen
+- #1249314 by KrisBulman and JohnAlbin: Add theme setting for HTML5 shim and Respond.js
+- #1249314 by KrisBulman and JohnAlbin: Fix respond.js
+- Work-around for a core bug affecting node edit forms; see issue #943212
+- Add $html_attributes and $html_attributes_array to html.tpl
+- #1179128 by JohnAlbin: Too easy to get undefined variable in maintenance-page.tpl.php
+- #1249790 by KrisBulman and JohnAlbin: Convert tabs from old sliding-door CSS technique to CSS3
+- #1279236: Override core's system.menus.css since we already override the styles
+- #1154358 by mverbaar, barraponto and JohnAlbin: Rename theme setting variables for skip link
+- #1239390 by JohnAlbin and KrisBulman: Add conditionally-classed HTML tag and remove IE conditional stylesheets
+- #1249314: Add Respond.js to Zen
+- #1249326: Add HTML5 shim and innerShiv to Zen
+- #1245900: Strip wrapping divs from "main page content" block and content region
+- #1239390: Add conditionally-classed HTML tag and remove IE conditional stylesheets
+- Add meta tags necessary for mobile device support
+- Remove HTTP request for print stylesheet
+- #1134622: Add Sass versions of CSS files
+- #535038: Convert to HTML 5
+
+Zen 7.x-3.x-dev, xxxx-xx-xx (development release)
+---------------------------
+- #1239784: Make zen logo's alpha channel be IE6 compatible
+- #1478244: Weight needed for conditional stylesheets added via drupal_add_css()
+- #469f073: Fix font sizing of monospace fonts
+- #1249842: Deprecate liquid layout CSS
+- #1279838 by JohnAlbin and Bevan: Deleted regions cause PHP notices in maintenance-page.tpl.php
+- #1354356: Fix broken #skip-link styling in stylesheets
+- #1110650: Remove work-around for missing anonymous class on comments (fixed by Drupal 7.9)
+- Work-around for a core bug affecting admin themes. See issue #943212.
+- #1258280 by barraponto: Document $page['navigation'] in page.tpl
+- #105524 by davidhwang: Redundant label CSS overrides Webform label placement selector
+- #1241090 by KrisBulman: Incorrect calc in html-reset comment
+- #1174290 by naxoc: Fix code error in js/README.txt
+- #1154358 by mverbaar, barraponto and JohnAlbin: Add theme setting for skip link text
+- #1245222: Field styling bleeds into node edit forms
+- #1138744: Port panels layouts to Drupal 7
+
 Zen 7.x-3.1, 2011-04-26
 -----------------------
 - #812480 by Garrett Albright and JohnAlbin: Make "Jump to Nav" link configurable

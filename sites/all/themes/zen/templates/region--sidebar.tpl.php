@@ -27,7 +27,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <div class="<?php print $classes; ?>"><div class="section">
+  <section class="<?php print $classes; ?>">
     <?php print $content; ?>
-  </div></div><!-- /.section, /.region -->
+  </section><!-- region__sidebar -->
 <?php endif; ?>

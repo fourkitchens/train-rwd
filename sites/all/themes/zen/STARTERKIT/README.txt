@@ -60,23 +60,24 @@ installed in sites/all/themes/, but any valid theme directory is acceptable
 
  3. Choose your preferred page layout method or grid system.
 
-    By default your new sub-theme is using a fixed-width layout. If you want a
-    liquid layout for your theme, delete the unneeded layout-fixed.css and
-    layout-fixed-rtl.css files and edit your sub-theme's .info file and replace
-    the reference to layout-fixed.css with layout-liquid.css.
+    By default your new sub-theme is using a responsive layout. If you want a
+    fixed layout for your theme, delete the unneeded responsive-sidebars and
+    responsive-sidebars-rtl css/sass files and edit your sub-theme's .info file
+    and replace the reference to responsive-sidebars.css with fixed-width.css.
 
     For example, edit foo/foo.info and change this line:
-      stylesheets[all][]   = css/layout-fixed.css
+      stylesheets[all][]   = css/layouts/responsive-sidebars.css
     to:
-      stylesheets[all][]   = css/layout-liquid.css
+      stylesheets[all][]   = css/layouts/fixed-width.css
 
       Why? The "stylesheets" lines in your .info file describe the media type
       and path to the CSS file you want to include. The format for these lines
       is:  stylesheets[MEDIA][] = path/to/file.css
 
     Alternatively, if you are more familiar with a different CSS layout method,
-    such as Blueprint or 960.gs, you can replace the "css/layout-fixed.css" line
-    in your .info file with a line pointing at your choice of layout CSS file.
+    such as GridSetApp or 960.gs, etc., you can replace the
+    "css/layouts/responsive-sidebars.css" line in your .info file with a line
+    pointing at your choice of layout CSS file.
 
     Then, visit your site's Appearance page at admin/appearance to refresh
     Drupal 7's cache of .info file data.
@@ -128,6 +129,6 @@ Optional steps:
 
     Discover further ways to extend your sub-theme by reading Zen's
     documentation online at:
-      http://drupal.org/node/193318
+      http://drupal.org/documentation/theme/zen
     and Drupal 7's Theme Guide online at:
       http://drupal.org/theme-guide

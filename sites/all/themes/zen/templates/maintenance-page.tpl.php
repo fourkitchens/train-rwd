@@ -9,80 +9,94 @@
  * @see template_preprocess()
  * @see template_preprocess_maintenance_page()
  */
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
+?><!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" <?php print $html_attributes; ?>><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" <?php print $html_attributes; ?>><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" <?php print $html_attributes; ?>><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" <?php print $html_attributes; ?>><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html <?php print $html_attributes; ?>><!--<![endif]-->
 
 <head>
-  <title><?php print $head_title; ?></title>
   <?php print $head; ?>
+  <title><?php print $head_title; ?></title>
+
+  <?php if ($default_mobile_metatags): ?>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width">
+  <?php endif; ?>
+  <meta http-equiv="cleartype" content="on">
+
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <?php if ($add_respond_js): ?>
+    <!--[if lt IE 9]>
+    <script src="<?php print $base_path . $path_to_zen; ?>/js/html5-respond.js"></script>
+    <![endif]-->
+  <?php elseif ($add_html5_shim): ?>
+    <!--[if lt IE 9]>
+    <script src="<?php print $base_path . $path_to_zen; ?>/js/html5.js"></script>
+    <![endif]-->
+  <?php endif; ?>
 </head>
-<body class="<?php print $classes; ?>">
+<body class="<?php print $classes; ?>" <?php print $attributes;?>>
 
-  <div id="page-wrapper"><div id="page">
+<div id="page">
 
-    <div id="header"><div class="section clearfix">
+  <header id="header" role="banner">
 
-      <?php if ($logo): ?>
-        <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-      <?php endif; ?>
+    <?php if ($logo): ?>
+      <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+    <?php endif; ?>
 
-      <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-            <div id="site-name"><strong>
-              <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home">
-              <span><?php print $site_name; ?></span>
-              </a>
-            </strong></div>
-          <?php endif; ?>
-          <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div><!-- /#name-and-slogan -->
-      <?php endif; ?>
-
-      <?php print $header; ?>
-
-    </div></div><!-- /.section, /#header -->
-
-    <div id="main-wrapper"><div id="main" class="clearfix<?php if ($navigation) { print ' with-navigation'; } ?>">
-
-      <div id="content" class="column"><div class="section">
-
-        <?php print $highlighted; ?>
-
-        <?php if ($title): ?>
-          <h1 class="title"><?php print $title; ?></h1>
+    <?php if ($site_name || $site_slogan): ?>
+      <hgroup id="name-and-slogan">
+        <?php if ($site_name): ?>
+          <h1 id="site-name">
+            <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+          </h1>
         <?php endif; ?>
-        <?php print $messages; ?>
 
-        <?php print $content; ?>
+        <?php if ($site_slogan): ?>
+          <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
+        <?php endif; ?>
+      </hgroup><!-- /#name-and-slogan -->
+    <?php endif; ?>
 
-      </div></div><!-- /.section, /#content -->
+    <?php print $header; ?>
 
-      <?php if ($navigation): ?>
-        <div id="navigation"><div class="section clearfix">
+  </header>
 
-          <?php print $navigation; ?>
+  <div id="main">
 
-        </div></div><!-- /.section, /#navigation -->
+    <div id="content" class="column" role="main">
+      <?php print $highlighted; ?>
+      <a id="main-content"></a>
+      <?php if ($title): ?>
+        <h1 class="title" id="page-title"><?php print $title; ?></h1>
       <?php endif; ?>
+      <?php print $messages; ?>
+      <?php print $content; ?>
+    </div><!-- /#content -->
 
-      <?php print $sidebar_first; ?>
+    <div id="navigation">
+      <?php print $navigation; ?>
+    </div><!-- /#navigation -->
 
-      <?php print $sidebar_second; ?>
+    <?php if ($sidebar_first || $sidebar_second): ?>
+      <aside class="sidebars">
+        <?php print $sidebar_first; ?>
+        <?php print $sidebar_second; ?>
+      </aside><!-- /.sidebars -->
+    <?php endif; ?>
 
-    </div></div><!-- /#main, /#main-wrapper -->
+  </div><!-- /#main -->
 
-    <?php print $footer; ?>
+  <?php print $footer; ?>
 
-  </div></div><!-- /#page, /#page-wrapper -->
+</div><!-- /#page -->
 
-  <?php print $bottom; ?>
+<?php print $bottom; ?>
 
 </body>
 </html>

@@ -64,7 +64,7 @@ ONLINE READING
 --------------
 
 Full documentation on the Zen theme can be found in Drupal's Handbook:
-  http://drupal.org/node/193318
+  http://drupal.org/documentation/theme/zen
 
 Excellent documentation on Drupal theming can be found in the Theme Guide:
   http://drupal.org/theme-guide
@@ -86,8 +86,8 @@ INSTALLATION
         making it available to only the example.com site if there is a
         sites/example.com/settings.php configuration file
 
-    Please note: you will need to create the "theme" folder under "sites/all/"
-    or "sites/default/".
+    Please note: you will need to manually create the "themes" folder under
+    "sites/default/".
 
     For more information about acceptable theme installation directories, read
     the sites/default/default.settings.php file in your Drupal installation.

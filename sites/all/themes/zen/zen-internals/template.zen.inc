@@ -20,9 +20,9 @@ function _zen_preprocess_html(&$variables, $hook) {
   // want the stylesheets to be inherited from Zen since it becomes impossible
   // to re-order the stylesheets in the sub-theme.
   $stylesheets = array(
-    'html-reset.css',
+    'normalize.css',
     'wireframes.css',
-    'layout-fixed.css',
+    'layouts/responsive-sidebars.css',
     'page-backgrounds.css',
     'tabs.css',
     'pages.css',
@@ -33,19 +33,13 @@ function _zen_preprocess_html(&$variables, $hook) {
     'comments.css',
     'forms.css',
     'fields.css',
+    'print.css',
   );
-  if (theme_get_setting('zen_layout') == 'zen-columns-liquid') {
-    // Replace the layout-fixed.css file.
-    $stylesheets[2] = 'layout-liquid.css';
+  if (theme_get_setting('zen_layout') == 'zen-fixed-width') {
+    // Replace the fixed-width.css file.
+    $stylesheets[2] = 'layouts/fixed-width.css';
   }
   foreach ($stylesheets as $stylesheet) {
     drupal_add_css($directory . $stylesheet, array('group' => CSS_THEME, 'every_page' => TRUE));
   }
-
-  // Add print styles.
-  drupal_add_css($directory . 'print.css', array('media' => 'print', 'group' => CSS_THEME, 'every_page' => TRUE));
-
-  // Add conditional stylesheets.
-  drupal_add_css($directory . 'ie7.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 7', '!IE' => FALSE), 'every_page' => TRUE));
-  drupal_add_css($directory . 'ie6.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 6', '!IE' => FALSE), 'every_page' => TRUE));
 }
