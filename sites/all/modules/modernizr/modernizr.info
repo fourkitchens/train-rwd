@@ -6,3 +6,10 @@ files[] = modernizr.module
 files[] = modernizr.inc
 files[] = modernizr.install
 files[] = modernizr.admin.inc
+
+; Information added by drupal.org packaging script on 2012-07-30
+version = "7.x-3.0-beta1"
+core = "7.x"
+project = "modernizr"
+datestamp = "1343619169"
+
