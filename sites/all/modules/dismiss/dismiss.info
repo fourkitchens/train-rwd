@@ -1,0 +1,16 @@
+name = "Dismiss"
+description = Adds a "Dismiss" button to Drupal messages, warnings, and errors.
+core = 7.x
+package = User interface
+
+files[] = dismiss.module
+
+stylesheets[all][] = css/dismiss.base.css
+scripts[] = js/dismiss.js
+
+; Information added by drupal.org packaging script on 2012-08-08
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "dismiss"
+datestamp = "1344428217"
+

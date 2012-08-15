@@ -1,0 +1,67 @@
+/**
+ * @file
+ *   Essential CSS for the Dismiss module
+ */
+
+/*
+ * All messages require relative positioning
+ * for the Dismiss button to be placed properly
+ */
+.messages {
+  position: relative;
+  padding-right: 1.5em;
+}
+
+/*
+ * Dismiss button
+ */
+.dismiss {
+  display: block;
+  position: absolute;
+  top: .4em;
+  right: .4em;
+  width: 1.4em;
+  background: #f00;
+  color: #fff;
+
+  font-weight: 900;
+  text-align: center;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.4);
+  text-decoration: none;
+
+  border-radius: 3px;
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+  opacity: .5;
+
+  cursor: pointer;
+  -webkit-transition: .1s opacity linear;
+     -moz-transition: .1s opacity linear;
+      -ms-transition: .1s opacity linear;
+       -o-transition: .1s opacity linear;
+          transition: .1s opacity linear;
+}
+
+/*
+ * When the user mouses over the message box, make the button more prominent
+ */
+.messages:hover .dismiss {
+  opacity: 1;
+}
+
+/*
+ * Change states when users mouseover
+ */
+.dismiss:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ * Change states when users click
+ */
+.dismiss:active {
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+  box-shadow: 0 0 1px rgba(0,0,0,0.4);
+  margin-top: 1px;
+  margin-left: 1px;
+}
