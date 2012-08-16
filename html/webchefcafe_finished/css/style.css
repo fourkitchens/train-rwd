@@ -36,7 +36,7 @@ a:visited {
 
 /**
  * This is initially hidden, but as the design grows in size, we will set all of
- * the <br>s to display: block; Ñ preserving the ability to control line breaks.
+ * the <br>s to display: block; -- preserving the ability to control line breaks.
  *
  * @see http://danielmall.com/articles/responsive-line-breaks/
  **/
@@ -266,18 +266,6 @@ footer p#copyright {
   }
 
 } /* (min-width: 320px) */
-
-
-
-
-
-
-/*
- * This media query means "visual, pixel-based screens which are at least 480px wide"
- */
-@media only screen and (min-width: 480px) {
-
-} /* (min-width: 480px) */
 
 
 
