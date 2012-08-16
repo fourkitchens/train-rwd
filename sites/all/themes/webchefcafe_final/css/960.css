@@ -1,5 +1,8 @@
 header {
-  background: #e69a23 url(../img/webchef-logo.png) 10px top no-repeat;
+  background-image: url(../img/webchef-logo.png);
+  background-size: 30%;
+  background-position: 8% 14%;
+  padding-top: 3%;
 }
 
 #tagline {
@@ -27,24 +30,6 @@ nav {
   max-width: 420px;
   float: right;
   border-radius: 3px;
-}
-
-#sidebar-bread {
-  margin-top: -160px;
-}
-
-#sidebar-bread,
-#sidebar-soup {
-  clear: right;
-  float: right;
-  display: block;
-  margin-bottom: 10px;
-  margin-right: 0;
-}
-
-#sidebar-bread img,
-#sidebar-soup img {
-  width: 365px;
 }
 
 #block-block-4 section {
@@ -80,16 +65,16 @@ nav {
   margin-top: 0;
 }
 
-#about {
+#block-block-3 {
   clear: both;
 }
 
-/* This .csscolumns class is a Modernizr class, found in <html> */
-.csscolumns #about p {
-  -moz-column-count: 2;
-  -moz-column-gap: 20px;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 20px;
-  column-count: 2;
-  column-gap: 20px;
+#block-block-3 p {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+#block-block-3 p:nth-of-type(2n+1) {
+  clear: left;
 }

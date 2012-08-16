@@ -51,6 +51,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,target-densityDpi=device-dpi">
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+
+  <script src="//use.typekit.net/vcy6oeb.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
   <?php print $scripts; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
