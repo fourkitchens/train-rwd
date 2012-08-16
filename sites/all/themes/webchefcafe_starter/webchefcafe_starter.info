@@ -1,0 +1,50 @@
+name        = Web Chef Café starter)
+description = Welcome to the Web Chef Café! This theme is responsive. Built with <3 by <a href="http://fourkitchens.com">Four Kitchens</a>.
+core        = 7.x
+engine      = phptemplate
+
+;
+; First, we unset
+; http://sonspring.com/journal/html5-in-drupal-7
+;
+
+stylesheets[all][] = unset/field.css
+stylesheets[all][] = unset/node.css
+stylesheets[all][] = unset/user.css
+stylesheets[all][] = unset/field.css
+stylesheets[all][] = unset/system.menus.css
+
+;
+; CSS
+;
+; Since we defined our media queries within the stylesheet,
+; it's fine to use the "all" media just like normal
+; 
+; Don't combine <link> attribute-based media queries with @media inside a stylesheet
+;
+
+stylesheets[all][] = css/h5bp.css
+stylesheets[all][] = css/style.css
+stylesheets[print][] = css/print.css
+
+;
+; JS
+;
+; We're not loading any by default but here's the syntax
+;
+
+; scripts[] = path/to.js
+
+;
+; Regions
+;
+
+regions[content] = Content
+regions[content_below] = Below content
+regions[sidebar] = Right sidebar
+regions[footer] = Footer
+
+;
+; Built with ❤ by Four Kitchens
+; No rights reserved. 
+;

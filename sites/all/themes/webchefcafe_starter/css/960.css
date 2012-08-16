@@ -1,0 +1,80 @@
+header {
+  background-image: url(../img/webchef-logo.png);
+  background-size: 30%;
+  background-position: 8% 14%;
+  padding-top: 3%;
+}
+
+#tagline {
+  display: block;
+}
+
+#container {
+}
+
+header h1 {
+  font-size: 5em;
+  padding: 0.5em 0 0;
+}
+
+nav {
+  width: 960px;
+  margin: 0 0 0 50px;
+}
+
+#main {
+  padding-top: 2em;
+}
+
+#block-block-4 {
+  max-width: 420px;
+  float: right;
+  border-radius: 3px;
+}
+
+#block-block-4 section {
+  width: 100%;
+  float: none;
+  clear: both;
+  padding-bottom: 1em;
+}
+
+#block-block-4 h3 {
+  float: left;
+  clear: left;
+  width: 80px;
+  padding: 0;
+}
+
+#block-block-4 ul,
+#block-block-4 address {
+  margin-left: 80px;
+}
+
+#menu section {
+  width: 270px;
+  margin: 0 .75em 2em;
+}
+
+#menu section:nth-child(2n) {
+  clear: left;
+  margin-left: 0;
+}
+
+#menu section h3 {
+  margin-top: 0;
+}
+
+#block-block-3 {
+  clear: both;
+}
+
+#block-block-3 p {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+#block-block-3 p:nth-of-type(2n+1) {
+  clear: left;
+}
