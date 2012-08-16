@@ -490,7 +490,7 @@ footer p#copyright {
   }
 
   #info {
-    width: 17%;
+    width: 43%;
   }
 
   #menu {
@@ -499,14 +499,6 @@ footer p#copyright {
 
   #menu section {
     width: 30%;
-  }
-
-  #menu section:nth-of-type(2n+1) {
-    clear: none;
-  }
-
-  #menu section:nth-of-type(3n+1) {
-    clear: left;
   }
 
   #about p {
