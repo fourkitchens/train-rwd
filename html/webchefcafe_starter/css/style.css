@@ -18,13 +18,12 @@
  **/
 
 body {
+  font-size: 1.05em;
   font-family: helvetica, sans-serif;
   line-height: 1.4em;
 }
 
 #container {
-  width: 960px;
-  margin: 0 auto;
 }
 
 h2, h3, h4 {
@@ -47,14 +46,14 @@ br.rbr {
 }
 
 header {
-  padding-top: 20%;
+  padding-top: 1%;
+  margin: 0;
   background-color: #e69a23;
-  background-image: url(../img/webchef-cafe-logo-sm.png);
-  background-position: 50% 10%;
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-image: url(../img/webchef-cafe-logo.png);
+  background-size: 400px;
+  background-position: 20px 30px;
 }
-
 
 /**
  * Always choose SVG over raster if possible
@@ -64,18 +63,19 @@ header {
   background-image: url(../img/webchef-cafe-logo.svg);
 }
 
-
 header h1 {
   visibility: hidden;
+  font-size: 2em;
+  font-size: 4em;
+  text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
+  font-size: 5em;
+  padding: 0.5em 0 0;
 }
 
 header h1 a,
 header h1 a:visited {
-  color: #555;
+  color: #eee;
   text-decoration: none;
-}
-
-header h1 a:hover {
 }
 
 #tagline {
@@ -84,6 +84,11 @@ header h1 a:hover {
   font-size: 24px;
   font-family: Georgia;
   color: #FFF;
+}
+
+nav {
+  width: 600px;
+  margin-left: 32px;
 }
 
 nav a {
@@ -102,10 +107,60 @@ nav a {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
      -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
           box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+
+  width: 28%;
+  float: left;
+  margin-bottom: 0;
+  border: none;
+  -webkit-border-radius: 10px 10px 0 0;
+     -moz-border-radius-bottomright: 0;
+     -moz-border-radius-bottomleft: 0;
+          border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
 }
 
 nav a:hover {
   color: inherit;
+}
+
+#menu {
+  width: 82%;
+}
+
+#menu h2 {
+  display: none;
+}
+
+#menu section {
+  margin: 0 .25em 2em;
+  float: left;
+  width: 44%;
+  margin: 0 2% 1em 2%;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  width: 48%;
+  margin: 0 2% 0 0;
+  width: 30%;
+}
+
+#menu section:nth-of-type(2n+1) {
+  clear: left;
+  margin-left: 0;
+}
+
+#menu section h3 {
+  background-color: #81CEDC;
+  color: #fff;
+  padding: .5em;
+  margin: 0;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  border-radius: 7px 7px 0 0;
 }
 
 #menu h4 {
@@ -124,6 +179,12 @@ nav a:hover {
   padding: .3em .7em;
 }
 
+#menu .item {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-bottom: 8px;
+}
+
 #specials p {
   display: none;
   background-sizing: contain;
@@ -132,13 +193,12 @@ nav a:hover {
 }
 
 #main {
-  width: 960px;
-  margin: 0 auto;
   clear: both;
   padding: 1em;
   min-height: 300px;
   border-bottom: 1px #555 dotted;
   margin-bottom: 5px;
+  padding-top: 2em;
 }
 
 #info {
@@ -147,6 +207,16 @@ nav a:hover {
   padding: 0 2%;
   margin: 1em 3%;
   color: #FFF;
+  float: right;
+  width: 43%;
+  margin: 0 0 1em 0;
+  box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
+  border: 1px solid rgba(108,140,110,0.25);
+  border-radius: 5px;
+}
+
+#info h2 {
+  margin: .75em 0 .5em;
 }
 
 #info ul {
@@ -158,8 +228,47 @@ nav a:hover {
   display: block;
 }
 
+#info section {
+  width: 50%;
+  float: left;
+  width: 100%;
+  float: none;
+  clear: both;
+  padding-bottom: 1em;
+}
+
+#info section h3 {
+  margin: 0;
+  padding: 1em 0 .5em;
+  float: left;
+  clear: left;
+  width: 80px;
+  padding: 0;
+}
+
+#info section ul,
+#info section address {
+  margin-left: 80px;
+}
+
 #about {
   clear: both;
+}
+
+#about h2 {
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#about p {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+#about p:nth-of-type(2n+1) {
+  clear: left;
 }
 
 .drinks h3,
@@ -198,6 +307,28 @@ footer p#copyright {
 
 
 
+
+
+
+
+
+/**
+ * We're ready for line breaks. Nothing is stopping you from making multiple
+ * breakpoint classes for different media queries.. or use Modernizr classes
+ *
+ * Media queries: br.rbr-tablet, br.rbr-desktop, br.rbr-wide
+ * Modernizr:     .touch br.rbr, .no-touch br.rbr
+ **/
+br.rbr {
+  display: block;
+}
+
+
+
+
+
+
+
 /**
  *
  * Media Queries are below. These styles will only apply if the media query
@@ -208,74 +339,12 @@ footer p#copyright {
 
 
 
-
 /*
  * This media query means "visual, pixel-based screens which are at least 320px wide"
  */
 
-/*
 @media only screen and (min-width: 320px) {
-*/
-
-  header {
-    margin: 0;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  #tagline {
-    display: none;
-  }
-
-  #info {
-    margin: 1em;
-    box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
-    border: 1px solid rgba(108,140,110,0.25);
-    border-radius: 5px;
-  }
-
-  #info h2 {
-    margin: .75em 0 .5em;
-  }
-
-  #info section h3 {
-    margin: 0;
-    padding: 1em 0 .5em;
-  }
-
-  #menu section {
-    margin: 0 .25em 2em;
-  }
-
-  #menu h3 {
-    background-color: #81CEDC;
-    color: #fff;
-    padding: .5em;
-    margin: 0;
-    font-size: 1.3em;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
-    border-radius: 7px 7px 0 0;
-  }
-
-  #menu .item {
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-bottom: 8px;
-  }
-
-  #about h2 {
-    border-bottom: 1px solid #efefef;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-
-/* } /* (min-width: 320px) */
-
-
+} /* (min-width: 320px) */
 
 
 
@@ -283,91 +352,9 @@ footer p#copyright {
 /*
  * This media query means "visual, pixel-based screens which are at least 640px wide"
  */
-/*
+
 @media only screen and (min-width: 640px) {
-*/
-
-  html {
-  }
-
-  body {
-  }
-
-  header {
-    background-image: url(../img/webchef-cafe-logo.png);
-  }
-
-  header h1 {
-    font-size: 4em;
-    text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
-  }
-
-  header h1 a,
-  header h1 a:visited {
-    color: #eee;
-    text-decoration: none;
-  }
-
-  nav {
-  }
-
-  nav ul li {
-  }
-
-  nav ul li:nth-child(1) {
-  }
-
-  nav ul li a {
-    width: 28%;
-    float: left;
-    margin-bottom: 0;
-    border: none;
-    -webkit-border-radius: 10px 10px 0 0;
-       -moz-border-radius-bottomright: 0;
-       -moz-border-radius-bottomleft: 0;
-            border-radius: 10px 10px 0 0;
-    -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-            box-shadow: none;
-  }
-
-  nav a:visited {
-  }
-
-  nav ul li:hover {
-  }
-
-  nav ul li:hover a {
-  }
-
-  #info {
-    margin: 0 0 1em 0;
-  }
-
-  #info section {
-    width: 50%;
-    float: left;
-  }
-
-  #menu h2 {
-    display: none;
-  }
-
-  #menu section {
-    float: left;
-    width: 44%;
-    margin: 0 2% 1em 2%;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  }
-
-  #menu section:nth-of-type(2n+1) {
-    clear: left;
-    margin-left: 0;
-  }
-
-/* } /* (min-width: 640px) */
-
+} /* (min-width: 640px) */
 
 
 
@@ -376,96 +363,8 @@ footer p#copyright {
  * This media query means "visual, pixel-based screens which are at least 960px wide"
  */
 
-/*
 @media only screen and (min-width: 960px) {
-*/
-
-  body {
-    font-size: 1.05em;
-  }
-
-  /**
-   * We're ready for line breaks. Nothing is stopping you from making multiple
-   * breakpoint classes for different media queries.. or use Modernizr classes
-   *
-   * Media queries: br.rbr-tablet, br.rbr-desktop, br.rbr-wide
-   * Modernizr:     .touch br.rbr, .no-touch br.rbr
-   **/
-  br.rbr {
-    display: block;
-  }
-
-  header {
-    background-size: 40%;
-    background-position: 8% 18%;
-    padding-top: 1%;
-  }
-
-  header h1 {
-    font-size: 5em;
-    padding: 0.5em 0 0;
-  }
-
-  #tagline {
-    display: block;
-  }
-
-  #container {
-  }
-
-  nav {
-    width: 600px;
-    margin-left: 32px;
-  }
-
-  #main {
-    padding-top: 2em;
-  }
-
-  #info {
-    width: 29%;
-    float: right;
-  }
-
-
-  #info section {
-    width: 100%;
-    float: none;
-    clear: both;
-    padding-bottom: 1em;
-  }
-
-  #info section h3 {
-    float: left;
-    clear: left;
-    width: 80px;
-    padding: 0;
-  }
-
-  #info section ul,
-  #info section address {
-    margin-left: 80px;
-  }
-
-  #menu {
-    width: 66%;
-  }
-
-  #menu section {
-    width: 48%;
-    margin: 0 2% 0 0;
-  }
-
-  #menu section h3 {
-    margin-top: 0;
-  }
-
-  #about {
-    clear: both;
-  }
-
-/* } /* (min-width: 960px) */
-
+} /* (min-width: 960px) */
 
 
 
@@ -474,38 +373,5 @@ footer p#copyright {
  * This media query means "visual, pixel-based screens which are at least 1290px wide"
  */
 
-/*
 @media only screen and (min-width: 1290px) {
-*/
-
-  header {
-    background-size: 400px;
-    background-position: 20px 30px;
-  }
-
-  nav {
-  }
-
-  #info {
-    width: 43%;
-  }
-
-  #menu {
-    width: 82%;
-  }
-
-  #menu section {
-    width: 30%;
-  }
-
-  #about p {
-    float: left;
-    width: 48%;
-    margin-right: 2%;
-  }
-
-  #about p:nth-of-type(2n+1) {
-    clear: left;
-  }
-
-/* } /* (min-width: 1290px) */
+} /* (min-width: 1290px) */
