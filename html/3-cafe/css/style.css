@@ -29,7 +29,7 @@ h2 {
   font-family: Georgia;
 }
 
-a, 
+a,
 a:visited {
   color: #66B360;
 }
@@ -66,7 +66,7 @@ header h1 {
   visibility: hidden;
 }
 
-header h1 a, 
+header h1 a,
 header h1 a:visited {
   color: #555;
   text-decoration: none;
@@ -110,6 +110,13 @@ nav a:hover {
   border-bottom: 1px dotted #555;
   margin: 2px 0;
   padding: .3em .7em;
+}
+
+#specials p {
+  display: none;
+  background-sizing: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 
 #main {
@@ -241,12 +248,7 @@ footer p#copyright {
     margin-right: 8px;
     padding-bottom: 8px;
   }
- 
-  #sidebar-bread,
-  #sidebar-soup {
-   display: none;
-  } 
-  
+
   #about h2 {
     border-bottom: 1px solid #efefef;
     margin-bottom: 10px;
@@ -265,14 +267,46 @@ footer p#copyright {
  */
 @media only screen and (min-width: 480px) {
 
+} /* (min-width: 480px) */
+
+
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 640px wide"
+ */
+@media only screen and (min-width: 640px) {
+
+  html {
+  }
+
+  body {
+  }
+
+  header {
+    background-image: url(../img/webchef-cafe-logo.png);
+  }
+
+  header h1 {
+    font-size: 4em;
+    text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
+  }
+
+  header h1 a,
+  header h1 a:visited {
+    color: #eee;
+    text-decoration: none;
+  }
+
   nav {
-    margin-left: 5%
   }
-  
-  nav ul {
-  }
-  
+
   nav ul li {
+  }
+
+  nav ul li:nth-child(1) {
   }
 
   nav ul li a {
@@ -289,45 +323,18 @@ footer p#copyright {
             box-shadow: none;
   }
 
-} /* (min-width: 480px) */
-
-
-
-
-
-
-/*
- * This media query means "visual, pixel-based screens which are at least 640px wide"
- */
-@media only screen and (min-width: 640px) {
-
-  html {
-  }
-  
-  body {
+  nav a:visited {
   }
 
-  header {
-    background-image: url(../img/webchef-cafe-logo.png);
+  nav ul li:hover {
   }
-  
-  header h1 {
-    font-size: 4em;
-    text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
-  }
-  
-  header h1 a, 
-  header h1 a:visited {
-    color: #eee;
-    text-decoration: none;
-  }
-  
-  header h1 a:hover {
+
+  nav ul li:hover a {
   }
 
   #info {
     margin: 0 0 1em 0;
-  }  
+  }
 
   #info section {
     width: 50%;
@@ -337,11 +344,11 @@ footer p#copyright {
   #menu h2 {
     display: none;
   }
-  
+
   #menu h4 {
     border-bottom: 1px dotted #fefefe;
   }
-  
+
   #menu section {
     float: left;
     width: 44%;
@@ -350,36 +357,9 @@ footer p#copyright {
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   }
 
-  #sidebar-bread {
-    float: left;
-    display: block;
-    margin: 0 2% 1em 2%;
-  }
-
-  #sidebar-bread img,
-  #sidebar-soup img {
-    width: 280px;
-  }
-  
-  nav {
-  }
-  
-  nav ul li {
-  }
-  
-  nav ul li:nth-child(1) {
-  }
-  
-  nav a {
-  }
-  
-  nav a:visited {
-  }
-  
-  nav ul li:hover {
-  }
-  
-  nav ul li:hover a {
+  #menu section:nth-of-type(2n+1) {
+    clear: left;
+    margin-left: 0;
   }
 
 } /* (min-width: 640px) */
@@ -392,6 +372,10 @@ footer p#copyright {
  * This media query means "visual, pixel-based screens which are at least 960px wide"
  */
 @media only screen and (min-width: 960px) {
+
+  body {
+    font-size: 1.05em;
+  }
 
   /**
    * We're ready for line breaks. Nothing is stopping you from making multiple
@@ -407,7 +391,7 @@ footer p#copyright {
   header {
     background-size: 40%;
     background-position: 8% 18%;
-    padding-top: 4%;
+    padding-top: 1%;
   }
 
   #tagline {
@@ -436,38 +420,21 @@ footer p#copyright {
     float: right;
   }
 
-  #sidebar-bread {
-    margin-top: -160px;
-  }
 
-  #sidebar-bread,
-  #sidebar-soup {
-    clear: right;
-    float: right;
-    display: block;
-    margin-bottom: 10px;
-    margin-right: 0;
-  }
-
-  #sidebar-bread img,
-  #sidebar-soup img {
-    width: 365px;
-  }
-  
   #info section {
     width: 100%;
     float: none;
     clear: both;
     padding-bottom: 1em;
   }
-  
+
   #info section h3 {
     float: left;
     clear: left;
     width: 80px;
     padding: 0;
   }
-  
+
   #info section ul,
   #info section address {
     margin-left: 80px;
@@ -481,12 +448,7 @@ footer p#copyright {
     width: 48%;
     margin: 0 2% 0 0;
   }
-  
-  #menu section:nth-of-type(2n+1) {
-    clear: left;
-    margin-left: 0;
-  }
-  
+
   #menu section h3 {
     margin-top: 0;
   }
@@ -494,17 +456,7 @@ footer p#copyright {
   #about {
     clear: both;
   }
-  
-  /* This .csscolumns class is a Modernizr class, found in <html> after the document loads */
-  .csscolumns #about p {
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
-    column-count: 2;
-    column-gap: 20px;
-  }
-  
+
 } /* (min-width: 960px) */
 
 
@@ -542,10 +494,6 @@ footer p#copyright {
 
   #menu section:nth-of-type(3n+1) {
     clear: left;
-  }
-
-  #sidebar-bread {
-    margin-top: 0;
   }
 
 } /* (min-width: 1290px) */
