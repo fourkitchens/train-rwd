@@ -496,4 +496,14 @@ footer p#copyright {
     clear: left;
   }
 
+  #about p {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  #about p:nth-of-type(2n+1) {
+    clear: left;
+  }
+
 } /* (min-width: 1290px) */
