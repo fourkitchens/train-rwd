@@ -3,11 +3,17 @@
  * This stylesheet is broken into several chunks.
  *
  * - The first is normal. The styles will always apply (unless overridden by a later rule, of course).
+ *
  * - The remaining chunks are enclosed by media queries. They will not apply to the document unless
  *   the query evals to TRUE.
+ *
  * - Since this is an example of "mobile-first" media queries, you'll notice the styles proceed from
  *   the regular, unconditional styles up to the largest resolution, which is 1290px in this case.
  *
+ * - We have set the stylesheets up this way to help newcomers comprehend the extra cascading that
+ *   occurs, but there are other methods which can be more efficient for experienced CSS developers.
+ *
+ *   @see http://smacss.com/
  **/
 
 body {
@@ -19,19 +25,42 @@ body {
   width: 100%;
 }
 
+h2 {
+  font-family: Georgia;
+}
+
 a, 
 a:visited {
   color: #66B360;
 }
 
-h2 {
-  font-family: Georgia;
+/**
+ * This is initially hidden, but as the design grows in size, we will set all of
+ * the <br>s to display: block; Ñ preserving the ability to control line breaks.
+ *
+ * @see http://danielmall.com/articles/responsive-line-breaks/
+ **/
+br.rbr {
+  display: none;
 }
 
 header {
-  padding-top: 50px;
-  background: #e69a23 url(../css/webchef-logo-sm.png) 50% 8px no-repeat;
+  padding-top: 20%;
+  background-color: #e69a23;
+  background-image: url(../img/webchef-cafe-logo-sm.png);
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: 70%;
 }
+
+/**
+ * Always choose SVG over raster if possible
+ * .svg class will override media queries later in document
+ **/
+.svg header {
+  background-image: url(../img/webchef-cafe-logo.svg);
+}
+
 
 header h1 {
   visibility: hidden;
@@ -92,8 +121,10 @@ nav a:hover {
 }
 
 #info {
+  width: 90%;
   background: #66B360;
-  padding: 0 1em;
+  padding: 0 2%;
+  margin: 1em 3%;
   color: #FFF;
 }
 
@@ -133,6 +164,16 @@ footer p#copyright {
 }
 
 
+/* Fanciness */
+#menu,
+#info {
+  -webkit-transition: width .2s ease;
+     -moz-transition: width .2s ease;
+      -ms-transition: width .2s ease;
+       -o-transition: width .2s ease;
+          transition: width .2s ease;
+}
+
 
 
 
@@ -165,9 +206,10 @@ footer p#copyright {
   }
 
   #info {
-    margin-bottom: 1em;
+    margin: 1em;
     box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
     border: 1px solid rgba(108,140,110,0.25);
+    border-radius: 5px;
   }
 
   #info h2 {
@@ -266,6 +308,7 @@ footer p#copyright {
   }
 
   header {
+    background-image: url(../img/webchef-cafe-logo.png);
   }
   
   header h1 {
@@ -281,7 +324,11 @@ footer p#copyright {
   
   header h1 a:hover {
   }
-  
+
+  #info {
+    margin: 0 0 1em 0;
+  }  
+
   #info section {
     width: 50%;
     float: left;
@@ -346,8 +393,21 @@ footer p#copyright {
  */
 @media only screen and (min-width: 960px) {
 
+  /**
+   * We're ready for line breaks. Nothing is stopping you from making multiple
+   * breakpoint classes for different media queries.. or use Modernizr classes
+   *
+   * Media queries: br.rbr-tablet, br.rbr-desktop, br.rbr-wide
+   * Modernizr:     .touch br.rbr, .no-touch br.rbr
+   **/
+  br.rbr {
+    display: block;
+  }
+
   header {
-    background: #e69a23 url(../../css/webchef-logo.png) 10px top no-repeat;
+    background-size: 40%;
+    background-position: 8% 18%;
+    padding-top: 4%;
   }
 
   #tagline {
@@ -363,8 +423,8 @@ footer p#copyright {
   }
 
   nav {
-    width: 960px;
-    margin: 0 0 0 50px;
+    width: 70%;
+    margin-left: 4%;
   }
 
   #main {
@@ -372,9 +432,8 @@ footer p#copyright {
   }
 
   #info {
-    max-width: 420px;
+    width: 29%;
     float: right;
-    border-radius: 3px;
   }
 
   #sidebar-bread {
@@ -414,12 +473,16 @@ footer p#copyright {
     margin-left: 80px;
   }
 
+  #menu {
+    width: 66%;
+  }
+
   #menu section {
-    width: 270px;
-    margin: 0 .75em 2em;
+    width: 48%;
+    margin: 0 2% 0 0;
   }
   
-  #menu section:nth-child(2n) {
+  #menu section:nth-of-type(2n+1) {
     clear: left;
     margin-left: 0;
   }
@@ -432,7 +495,7 @@ footer p#copyright {
     clear: both;
   }
   
-  /* This .csscolumns class is a Modernizr class, found in <html> */
+  /* This .csscolumns class is a Modernizr class, found in <html> after the document loads */
   .csscolumns #about p {
     -moz-column-count: 2;
     -moz-column-gap: 20px;
@@ -453,13 +516,32 @@ footer p#copyright {
  */
 @media only screen and (min-width: 1290px) {
 
-  nav {
-    margin-left: 50px;
+  header {
+    background-size: 30%;
+    background-position: 5% 20%;
   }
 
-  #menu section:nth-child(2n) {
+  nav {
+  }
+
+  #info {
+    width: 17%;
+  }
+
+  #menu {
+    width: 82%;
+  }
+
+  #menu section {
+    width: 30%;
+  }
+
+  #menu section:nth-of-type(2n+1) {
     clear: none;
-    margin-left: 2%;
+  }
+
+  #menu section:nth-of-type(3n+1) {
+    clear: left;
   }
 
   #sidebar-bread {
