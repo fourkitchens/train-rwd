@@ -23,6 +23,8 @@ body {
 }
 
 #container {
+  width: 960px;
+  margin: 0 auto;
 }
 
 h2, h3, h4 {
@@ -397,11 +399,6 @@ footer p#copyright {
     background-size: 40%;
     background-position: 8% 18%;
     padding-top: 1%;
-  }
-
-  header .pad {
-    width: 960px;
-    margin: 0 auto;
   }
 
   header h1 {
