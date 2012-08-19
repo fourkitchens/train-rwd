@@ -24,6 +24,8 @@ body {
 }
 
 #container {
+  width: 960px;
+  margin: 0 auto;
 }
 
 h2, h3, h4 {
@@ -52,7 +54,7 @@ header {
   background-repeat: no-repeat;
   background-image: url(../img/webchef-cafe-logo.png);
   background-size: 400px;
-  background-position: 20px 30px;
+  background-position: 20px 0px;
 }
 
 /**
@@ -65,16 +67,15 @@ header {
 
 header h1 {
   visibility: hidden;
-  font-size: 2em;
+  color: #fff;
+  text-shadow: 3px 3px 1px #19191b, 5px 5px 6px rgba(0,0,0,0.5);
   font-size: 4em;
-  text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
-  font-size: 5em;
   padding: 0.5em 0 0;
 }
 
 header h1 a,
 header h1 a:visited {
-  color: #eee;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -82,7 +83,7 @@ header h1 a:visited {
   float: right;
   margin: -90px 20px 0;
   font-size: 24px;
-  font-family: Georgia;
+  font-family: Georgia, serif;
   color: #FFF;
 }
 
@@ -93,28 +94,23 @@ nav {
 
 nav a {
   display: block;
-  margin: 6px;
+  float: left;
+  width: 28%;
+  margin: 6px 6px 0 6px;
   padding: 10px 4px;
   background: #fff;
-  text-align: center;
+
   color: #333;
+  text-align: center;
   text-decoration: none;
   font-family: "bryant-web";
   font-weight: 700;
   font-size: 1.2em;
-  border: 1px solid rgba(0,0,0,0.4);
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
-     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
-          box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
 
-  width: 28%;
-  float: left;
-  margin-bottom: 0;
   border: none;
   -webkit-border-radius: 10px 10px 0 0;
      -moz-border-radius-bottomright: 0;
-     -moz-border-radius-bottomleft: 0;
+     -moz-border-radius-bottomleft:  0;
           border-radius: 10px 10px 0 0;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
@@ -126,6 +122,71 @@ nav a:hover {
   color: inherit;
 }
 
+
+#main {
+  clear: both;
+  padding: 1em;
+  min-height: 300px;
+  border-bottom: 1px #555 dotted;
+  margin-bottom: 5px;
+  padding-top: 2em;
+}
+
+
+/*
+ * Hours, location, contact
+ */
+
+#info {
+  width: 43%;
+  float: right;
+  margin: 0 0 1em 0;
+  padding: 0 2%;
+  background: #66B360;
+  border: 1px solid rgba(108,140,110,0.25);
+  border-radius: 5px;
+  box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+#info h2 {
+  margin: .75em 0 .5em;
+}
+
+#info ul {
+  margin: 0;
+  padding: 0;
+}
+
+#info ul li {
+  display: block;
+}
+
+#info section {
+  width: 100%;
+  float: none;
+  clear: both;
+  padding-bottom: 1em;
+}
+
+#info section h3 {
+  width: 80px;
+  float: left;
+  clear: left;
+  margin: 0;
+  padding: 0;
+}
+
+#info section ul,
+#info section address {
+  margin-left: 80px;
+}
+
+
+/*
+ * Menu
+ */
+
 #menu {
   width: 82%;
 }
@@ -135,15 +196,16 @@ nav a:hover {
 }
 
 #menu section {
-  margin: 0 .25em 2em;
   float: left;
-  width: 44%;
-  margin: 0 2% 1em 2%;
+  width: 30%;
+  margin: 0 2% 0 0;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  width: 48%;
-  margin: 0 2% 0 0;
-  width: 30%;
+}
+
+#menu section.desserts {
+  /* See '#menu section' 30% + 30% + 2% */
+  width: 62%;
 }
 
 #menu section:nth-of-type(2n+1) {
@@ -185,71 +247,10 @@ nav a:hover {
   padding-bottom: 8px;
 }
 
-#specials p {
-  display: none;
-  background-sizing: contain;
-  background-repeat: no-repeat;
-  background-position: left top;
-}
 
-#main {
-  clear: both;
-  padding: 1em;
-  min-height: 300px;
-  border-bottom: 1px #555 dotted;
-  margin-bottom: 5px;
-  padding-top: 2em;
-}
-
-#info {
-  width: 90%;
-  background: #66B360;
-  padding: 0 2%;
-  margin: 1em 3%;
-  color: #FFF;
-  float: right;
-  width: 43%;
-  margin: 0 0 1em 0;
-  box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
-  border: 1px solid rgba(108,140,110,0.25);
-  border-radius: 5px;
-}
-
-#info h2 {
-  margin: .75em 0 .5em;
-}
-
-#info ul {
-  margin: 0;
-  padding: 0;
-}
-
-#info ul li {
-  display: block;
-}
-
-#info section {
-  width: 50%;
-  float: left;
-  width: 100%;
-  float: none;
-  clear: both;
-  padding-bottom: 1em;
-}
-
-#info section h3 {
-  margin: 0;
-  padding: 1em 0 .5em;
-  float: left;
-  clear: left;
-  width: 80px;
-  padding: 0;
-}
-
-#info section ul,
-#info section address {
-  margin-left: 80px;
-}
+/*
+ * About section
+ */
 
 #about {
   clear: both;
@@ -271,11 +272,9 @@ nav a:hover {
   clear: left;
 }
 
-.drinks h3,
-.entrees h3,
-.desserts h3 {
-  font-size: 18px;
-}
+/*
+ * Footer
+ */
 
 footer {
   padding: 1em;
@@ -294,23 +293,19 @@ footer p#copyright {
 }
 
 
-/* Fanciness */
+/*
+ * Fancy effect for when people are testing various browser widths.
+ * This is not necessary on a real site, but you might find a use for it.
+ */
 #menu,
 #info {
+  /* Limit transitions to 'width' instead of 'all' CSS properties */
   -webkit-transition: width .2s ease;
      -moz-transition: width .2s ease;
       -ms-transition: width .2s ease;
        -o-transition: width .2s ease;
           transition: width .2s ease;
 }
-
-
-
-
-
-
-
-
 
 /**
  * We're ready for line breaks. Nothing is stopping you from making multiple
@@ -342,7 +337,6 @@ br.rbr {
 /*
  * This media query means "visual, pixel-based screens which are at least 320px wide"
  */
-
 @media only screen and (min-width: 320px) {
 } /* (min-width: 320px) */
 
@@ -352,7 +346,6 @@ br.rbr {
 /*
  * This media query means "visual, pixel-based screens which are at least 640px wide"
  */
-
 @media only screen and (min-width: 640px) {
 } /* (min-width: 640px) */
 
@@ -362,7 +355,6 @@ br.rbr {
 /*
  * This media query means "visual, pixel-based screens which are at least 960px wide"
  */
-
 @media only screen and (min-width: 960px) {
 } /* (min-width: 960px) */
 
@@ -375,3 +367,21 @@ br.rbr {
 
 @media only screen and (min-width: 1290px) {
 } /* (min-width: 1290px) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens whose width exceeds its height"
+ */
+@media only screen and (orientation: landscape) {
+} /* (orientation: landscape) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens whose width exceeds its height"
+ */
+@media only screen and (orientation: portrait) {
+} /* (orientation: portrait) */
