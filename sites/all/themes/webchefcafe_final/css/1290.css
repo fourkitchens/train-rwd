@@ -1,12 +1,16 @@
-nav {
-  margin-left: 50px;
-}
+@media only screen and (min-width: 1290px) {
 
-#menu section:nth-child(2n) {
-  clear: none;
-  margin-left: 2%;
-}
+  nav {
+    margin-left: 50px;
+  }
+  
+  #menu section:nth-child(2n) {
+    clear: none;
+    margin-left: 2%;
+  }
+  
+  #sidebar-bread {
+    margin-top: 0;
+  }
 
-#sidebar-bread {
-  margin-top: 0;
 }

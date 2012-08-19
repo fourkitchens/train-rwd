@@ -23,8 +23,10 @@ stylesheets[all][] = unset/system.menus.css
 ; Don't combine <link> attribute-based media queries with @media inside a stylesheet
 ;
 
+; CSS reset
 stylesheets[all][] = css/h5bp.css
-stylesheets[all][] = css/style.css
+
+; Print should go last
 stylesheets[print][] = css/print.css
 
 ;

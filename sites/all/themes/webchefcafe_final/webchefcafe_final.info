@@ -14,6 +14,9 @@ stylesheets[all][] = unset/user.css
 stylesheets[all][] = unset/field.css
 stylesheets[all][] = unset/system.menus.css
 
+
+
+
 ;
 ; CSS
 ;
@@ -23,14 +26,22 @@ stylesheets[all][] = unset/system.menus.css
 ; Don't combine <link> attribute-based media queries with @media inside a stylesheet
 ;
 
+; CSS reset
 stylesheets[all][] = css/h5bp.css
+
+; Theme stylesheets go here
 stylesheets[all][] = css/style.css
-stylesheets[only screen and (min-width: 320px)][] = css/320.css
-stylesheets[only screen and (min-width: 480px)][] = css/480.css
-stylesheets[only screen and (min-width: 640px)][] = css/640.css
-stylesheets[only screen and (min-width: 960px)][] = css/960.css
-stylesheets[only screen and (min-width: 1290px)][] = css/1290.css
+stylesheets[all][] = css/320.css
+stylesheets[all][] = css/480.css
+stylesheets[all][] = css/640.css
+stylesheets[all][] = css/960.css
+stylesheets[all][] = css/1290.css
+
+; Print should go last
 stylesheets[print][] = css/print.css
+
+
+
 
 ;
 ; JS
@@ -39,6 +50,9 @@ stylesheets[print][] = css/print.css
 ;
 
 ; scripts[] = path/to.js
+
+
+
 
 ;
 ; Regions

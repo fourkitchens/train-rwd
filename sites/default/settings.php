@@ -456,3 +456,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+$databases['default']['default']['database'] = 'rwd_1000';
+$databases['default']['default']['username'] = 'rwd_1000';
+$databases['default']['default']['password'] = '8m8X0UBQ';
+
