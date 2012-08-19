@@ -53,6 +53,21 @@ header {
   background-size: 70%;
 }
 
+/*
+ * Hi-res logo via media query (pixel density)
+ *
+ * If higher pixel density displays are your only target device, this media query
+ * will allow you to serve high-resolution images. However, it is safer to use
+ * Modernizr and detect SVG support before serving an SVG.
+ */
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  header {
+    background-image: url(../img/webchef-cafe-logo.svg);
+  }
+}
+ */
+
 /**
  * Always choose SVG over raster if possible
  * .svg class will override media queries later in document
